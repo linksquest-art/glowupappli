@@ -1,0 +1,101 @@
+{
+  "palettes": {
+    "warm": ["#D9B08C","#B85C38","#F2C27A"],
+    "cool": ["#1F3B4D","#264653","#40576B"]
+  },
+  "clothes": {
+    "warm": ["Couleurs chaudes : beige, terre cuite, rouge brique, moutarde."],
+    "cool": ["Couleurs froides : bleu marine, gris, vert bouteille, violet profond."],
+    "general": ["Choisis des couleurs qui contrastent avec ta peau et tes cheveux."]
+  },
+  "skincare": {
+    "dry": ["Nettoyant doux", "Hydratant riche", "Sérum à l'acide hyaluronique", "SPF le matin"],
+    "oily": ["Nettoyant purifiant non asséchant", "Lotion légère", "Niacinamide", "SPF oil-free"],
+    "sensitive": ["Produits sans parfum", "Nettoyant très doux", "Crème apaisante", "Patch-test"],
+    "acne": ["Nettoyant doux", "Peroxyde de benzoyle ou salicylate (local)", "Hydratation légère", "Consulter un professionnel si persistant"],
+    "default": ["Nettoyant doux", "Hydratant adapté", "Écran solaire SPF 30+ chaque matin"]
+  },
+  "hair": {
+    "curly": ["Shampoing sans sulfate", "Après-shampoing nourrissant", "Huile légère pour définir les boucles", "Coupes en couches"],
+    "short": ["Produit texturant", "Coupes régulières", "Soin du cuir chevelu"],
+    "long": ["Masque nourrissant hebdomadaire", "Coupes régulières pour pointes saines"],
+    "default": ["Shampoing doux", "Après-shampoing léger", "Masque hebdomadaire"]
+  },
+  "quick": ["Hydratation et sommeil régulier améliorent l'apparence.", "Utiliser un SPF quotidien pour protéger et uniformiser le teint."],
+  "shoes": {
+    "femme": {
+      "enfant": [
+        "Converse Chuck Taylor Kids", "Nike Revolution Kids", "Adidas Grand Court Kids", "Vans Old Skool Kids",
+        "New Balance 574 Kids", "Puma RS-X Kids", "Saucony Cohesion Kids", "ASICS Gel-Lyte Kids",
+        "Reebok Club C Kids", "Clarks Sneakers Kids", "Merrell Trail Kids", "Skechers Sparkle Kids",
+        "Crocs Classic Clog Kids", "UGG Kids Boots", "Columbia Kids Boots", "Sorel Kids Boots",
+        "Keen Kids Waterproof", "Salomon Kids Trail", "The North Face Kids", "Timberland Kids",
+        "Birkenstock Kids", "Dr. Martens Kids", "Hoka Kids", "Brooks Kids Running", "Nike Air Max Kids"
+      ],
+      "ado": [
+        "Nike Air Force 1 Low White", "New Balance 530 Cloud White", "Adidas Superstar Classic", "Vans Old Skool Platform",
+        "Converse Chuck Taylor iridescent", "ASICS Gel-Lyte III Cream", "Saucony Jazz Vintage", "Nike Air Max 90 Pastel",
+        "Adidas Stan Smith Pink", "Reebok Club C Retro", "Nike Dunk Low Sail", "Jordan 1 Low White",
+        "New Balance 574 Core", "Adidas ZX 500 Vintage", "Vans SK8-Hi Cherry", "Puma Suede Bow",
+        "ASICS Gel-Kayano Teen", "Nike Revolution 7", "Converse One Star Pink", "Adidas Gazelle Bold",
+        "Doc Martens Jadon Teen", "Timberland Premium", "UGG Classic Short", "Birkenstock Arizona Teen",
+        "Hunter Original Tall Short"
+      ],
+      "adulte": [
+        "Nike Air Force 1 Mid", "Adidas Stan Smith", "New Balance 574 Pink", "Converse Chuck Taylor Iridescent",
+        "Vans Old Skool Cherry", "ASICS Gel-Lyte Sage", "Saucony Jazz Pink", "Nike Blazer Low Vintage",
+        "Adidas Forum Mid", "Puma Basket Bow", "Jordan 1 Low AJ1", "Reebok Club C85 Pink",
+        "Nike Air Max 90 Pink", "New Balance 327", "Adidas Grand Court", "Converse One Star Ox",
+        "Vans Authentic Platform", "ASICS Gel-Quantum", "Saucony DXN Trainers", "Dr. Martens 1461 W",
+        "Palladium Pampa Oxford", "Converse Run Star Hike", "Nike Cortez", "Adidas Campus Chalk",
+        "New Balance 515 V2"
+      ],
+      "senior": [
+        "New Balance 574 Comfort", "ASICS Gel-Contend Womens", "Saucony Cohesion Womens", "Brooks Ghost Womens",
+        "Clarks Cloudsteppers", "Skechers Go Walk", "Rockport Total Motion", "Hoka Clifton",
+        "Vionic Orthopedic", "Propet Womens", "Naturalizer Comfort", "Cole Haan Comfort",
+        "Sperry Boat Shoes", "Merrell Hiking Womens", "Salomon Comfort", "Keen Waterproof",
+        "Chaco Sandals", "Birkenstock Arizona", "Crocs Comfort Clog", "UGG Comfort Shoe",
+        "Dr. Martens Chelsea", "Timberland Waterproof", "L.L.Bean Loafer", "Lands' End Comfort",
+        "Eddie Bauer Slipper"
+      ]
+    },
+    "homme": {
+      "enfant": [
+        "Converse Chuck Taylor Kids", "Nike Revolution Kids", "Adidas Grand Court Kids", "Vans Old Skool Kids",
+        "New Balance 574 Kids", "Puma RS-X Kids", "Saucony Cohesion Kids", "ASICS Gel-Lyte Kids",
+        "Reebok Club C Kids", "Clarks Boys Shoes", "Merrell Trail Kids", "Skechers Boys",
+        "Crocs Classic Clog Kids", "Timberland Kids Boots", "Columbia Kids Boots", "Sorel Kids Boots",
+        "Keen Kids Waterproof", "Salomon Kids Trail", "The North Face Kids", "Jordan 1 Kids",
+        "Adidas Predator Kids", "Nike Air Max Kids", "Hoka Kids", "Brooks Kids Running", "Cat Footwear Kids"
+      ],
+      "ado": [
+        "Nike Air Force 1 Low", "Adidas Stan Smith", "New Balance 990v6 Teen", "Converse Chuck Taylor",
+        "Vans Old Skool", "ASICS Gel-Lyte III", "Saucony Jazz", "Nike Air Max 90",
+        "Adidas Superstar", "Reebok Club C", "Nike Dunk Low", "Jordan 1 Low",
+        "New Balance 574", "Adidas ZX 500", "Puma Suede Classic", "ASICS Gel-Kayano",
+        "Nike Revolution 7", "Converse One Star", "Adidas Gazelle", "Vans SK8-Hi",
+        "Doc Martens 1461 Teen", "Timberland 6-Inch", "Palladium Pampa", "Clarks Desert Boot",
+        "Nike Blazer Low Teen"
+      ],
+      "adulte": [
+        "Nike Air Force 1 Low", "Adidas Stan Smith", "New Balance 990v6", "Converse Chuck Taylor All Star",
+        "Vans Old Skool", "ASICS Gel-Lyte III", "Saucony Jazz Original", "Nike Air Max 90",
+        "Adidas Superstar", "Reebok Club C", "Nike Dunk Low", "Jordan 1 Low Retro",
+        "New Balance 574", "Adidas ZX 500", "Puma Suede Classic", "ASICS Gel-Kayano 14",
+        "Nike Revolution 7", "Converse One Star", "Adidas Gazelle", "Vans SK8-Hi",
+        "Doc Martens 1461", "Timberland 6-Inch Premium", "Palladium Pampa Hi", "Clarks Desert Boot",
+        "Nike Blazer Low"
+      ],
+      "senior": [
+        "New Balance 574 Comfort", "ASICS Gel-Contend", "Saucony Cohesion", "Brooks Ghost",
+        "Clarks Cloudsteppers", "Skechers Go Walk", "Rockport Total Motion", "Hoka Clifton",
+        "Vionic Orthopedic", "Propet Comfort", "Naturalizer Comfort", "Cole Haan Comfort",
+        "Sperry Top-Sider", "Merrell Hiking", "Salomon Comfort", "Keen Waterproof",
+        "Birkenstock Arizona", "Crocs Comfort Clog", "UGG Comfort Slip-On", "Dr. Martens Chelsea",
+        "Timberland Waterproof", "L.L.Bean Loafer", "Allen Edmonds Oxford", "Sebago Loafer",
+        "Bass Weejun Heritage"
+      ]
+    }
+  }
+}

@@ -1,0 +1,1344 @@
+<!doctype html>
+<html lang="fr">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+	<title>Glow Up - Analyse Style</title>
+	<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+	<div class="app-wrapper">
+		<!-- INTRO PAGE (Gender Select) -->
+		<div id="intro-page" class="page active">
+			<div class="page-content">
+				<div style="text-align:center;padding:40px 20px;display:flex;flex-direction:column;justify-content:center;height:100%;min-height:100vh">
+					<div style="margin-bottom:24px">
+						<div style="font-size:3rem;margin-bottom:12px;animation:float 3s ease-in-out infinite">✨</div>
+						<h1 class="title" style="font-size:1.8rem;margin:0 0 12px 0;color:#2d1b69;font-weight:800;background:linear-gradient(135deg, #7c3aed, #ec4899);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">Ton Style Parfait</h1>
+						<p class="subtitle" style="color:#5d3396;margin:0;font-size:0.95rem;font-weight:500">Découvre comment sublimer ton apparence avec l'IA</p>
+					</div>
+					
+					<div style="text-align:center;margin-bottom:20px">
+						<p style="color:#6b4a9f;margin-bottom:20px;font-weight:600;font-size:0.9rem">Qui êtes-vous ?</p>
+						<div class="gender-select">
+							<button class="gender-btn" onclick="startApp('femme')">👩 Femme</button>
+							<button class="gender-btn" onclick="startApp('homme')">👨 Homme</button>
+						</div>
+					</div>
+
+					<p style="color:#8b6aa9;font-size:0.75rem;margin-top:32px;letter-spacing:0.5px">Analyse privée • Recommandations personnalisées • Résultats instantanés</p>
+				</div>
+			</div>
+		</div>
+
+		<!-- PROFILE PAGE -->
+		<div id="profile-page" class="page">
+			<div class="page-content" style="overflow-y:auto;-webkit-overflow-scrolling:touch">
+				<div style="padding:16px 0 20px 0;min-height:100vh;display:flex;flex-direction:column">
+					<button onclick="goPage('intro')" style="margin:16px 20px 12px 20px;padding:11px 16px;background:linear-gradient(135deg, #f3e8ff, #fce7f3);color:#5d3396;border:1.5px solid rgba(124,58,237,0.2);border-radius:10px;font-size:0.9rem;font-weight:600;cursor:pointer;transition:all 0.3s">← Retour</button>
+					<h1 style="font-size:1.5rem;margin:0 20px 8px 20px;color:#2d1b69;font-weight:800">🧾 Ton Profil</h1>
+					<p style="color:#6b4a9f;margin:0 20px 18px 20px;font-size:0.85rem">Quelques infos rapides pour affiner l'analyse IA.</p>
+
+					<div style="margin:0 20px;display:flex;flex-direction:column;gap:12px">
+						<label class="label" for="profileName">Nom (optionnel)</label>
+						<input id="profileName" type="text" placeholder="Ex: Emma ou Lucas" />
+
+						<label class="label" for="profileAgeRange">Tranche d'age</label>
+						<select id="profileAgeRange">
+							<option value="">Choisir</option>
+							<option value="enfant">Enfant</option>
+							<option value="ado">Ado</option>
+							<option value="adulte">Adulte</option>
+							<option value="senior">Senior</option>
+						</select>
+
+						<label class="label" for="profileSkinTone">Couleur de peau</label>
+						<select id="profileSkinTone">
+							<option value="">Choisir</option>
+							<option value="tres clair">Tres clair</option>
+							<option value="clair">Clair</option>
+							<option value="moyen">Moyen</option>
+							<option value="mat">Mat</option>
+							<option value="fonce">Fonce</option>
+						</select>
+
+						<label class="label" for="profileSkinConcern">Priorite peau</label>
+						<select id="profileSkinConcern">
+							<option value="">Choisir</option>
+							<option value="sensibilite">Sensibilite</option>
+							<option value="acne">Acne</option>
+							<option value="secheresse">Secheresse</option>
+							<option value="brillance">Brillance</option>
+							<option value="rougeurs">Rougeurs</option>
+							<option value="uniformite">Uniformite</option>
+						</select>
+
+						<label class="label" for="profileBudgetLevel">Budget</label>
+						<select id="profileBudgetLevel">
+							<option value="">Choisir</option>
+							<option value="abordable">Abordable</option>
+							<option value="mix">Mix</option>
+							<option value="premium">Premium</option>
+						</select>
+
+						<label class="label" for="profileTargetStyle">Style vestimentaire vise</label>
+						<select id="profileTargetStyle">
+							<option value="">Choisir</option>
+							<option value="old money">Old Money</option>
+							<option value="streetwear">Streetwear</option>
+							<option value="y2k">Y2K</option>
+							<option value="minimaliste">Minimaliste</option>
+							<option value="casual chic">Casual chic</option>
+							<option value="sportwear">Sportwear</option>
+							<option value="techwear">Techwear</option>
+							<option value="preppy">Preppy</option>
+							<option value="grunge">Grunge</option>
+							<option value="skater">Skater</option>
+							<option value="quiet luxury">Quiet Luxury</option>
+							<option value="classique elegant">Classique elegant</option>
+							<option value="business casual">Business casual</option>
+							<option value="boho moderne">Boho moderne</option>
+							<option value="goth soft">Goth soft</option>
+							<option value="k-fashion">K-fashion</option>
+							<option value="parisian chic">Parisian chic</option>
+							<option value="workwear">Workwear</option>
+							<option value="coquette">Coquette</option>
+							<option value="smart urbain">Smart urbain</option>
+						</select>
+					</div>
+
+					<button id="continueToUploadBtn" disabled style="width:calc(100% - 40px);margin:22px 20px 0 20px;padding:12px 18px;font-size:0.9rem;background:linear-gradient(135deg, #7c3aed, #ec4899);color:#fff;border:none;border-radius:10px;font-weight:700;cursor:pointer;transition:all 0.3s;opacity:0.5">Continuer vers la photo</button>
+				</div>
+			</div>
+		</div>
+
+		<!-- UPLOAD PAGE -->
+		<div id="upload-page" class="page">
+			<div class="page-content" style="overflow-y:auto;-webkit-overflow-scrolling:touch">
+				<div style="padding:16px 0 20px 0;min-height:100vh;display:flex;flex-direction:column">
+					<button onclick="goPage('profile')" style="margin:16px 20px 12px 20px;padding:11px 16px;background:linear-gradient(135deg, #f3e8ff, #fce7f3);color:#5d3396;border:1.5px solid rgba(124,58,237,0.2);border-radius:10px;font-size:0.9rem;font-weight:600;cursor:pointer;transition:all 0.3s">← Retour</button>
+					<h1 style="font-size:1.5rem;margin:0 20px 8px 20px;color:#2d1b69;font-weight:800">📷 Upload ta photo</h1>
+					<p style="color:#6b4a9f;margin:0 20px 20px 20px;font-size:0.85rem">Clique pour prendre une photo ou importe une image existante</p>
+					
+					<div id="photoArea" style="text-align:center;margin:0 20px;position:relative;padding:30px 0;display:flex;align-items:center;justify-content:center;min-height:260px">
+						<canvas id="canvas" style="display:none"></canvas>
+						<video id="video" autoplay playsinline style="display:none;width:100%;border-radius:14px;max-height:400px;object-fit:cover" class="camera-preview"></video>
+						<img id="preview" alt="ta photo" style="display:none;width:100%;border-radius:14px;max-height:400px;object-fit:cover" />
+						<div id="photoPlaceholder" style="background:linear-gradient(135deg, rgba(124,58,237,0.08), rgba(236,72,153,0.08));padding:40px 20px;border-radius:14px;border:2px dashed rgba(124,58,237,0.25);text-align:center;width:100%;max-width:100%">
+							<div style="font-size:2.5rem;margin:0 0 10px 0">📸</div>
+							<p style="color:#5d3396;font-size:0.95rem;margin:0;font-weight:600">Ajoute une photo</p>
+							<p style="color:#8b6aa9;font-size:0.75rem;margin:6px 0 0 0">Pour des recommandations précises</p>
+						</div>
+					</div>
+
+					<div class="controls">
+						<button id="startCamera" style="flex:1;padding:12px 14px;background:linear-gradient(135deg, #7c3aed, #ec4899);color:#fff;border:none;border-radius:10px;font-size:0.9rem;font-weight:700;cursor:pointer;transition:all 0.3s">📹 Caméra</button>
+						<input id="upload" type="file" accept="image/*" style="display:none">
+						<button id="uploadBtn" style="flex:1;padding:12px 14px;background:linear-gradient(135deg, #7c3aed, #ec4899);color:#fff;border:none;border-radius:10px;font-size:0.9rem;font-weight:700;cursor:pointer;transition:all 0.3s">⬆️ Importer</button>
+					</div>
+					
+					<button id="analyzeBtn" style="width:calc(100% - 40px);margin:20px 20px 0 20px;display:none;padding:12px 18px;font-size:0.9rem;background:linear-gradient(135deg, #7c3aed, #ec4899);color:#fff;border:none;border-radius:10px;font-weight:700;cursor:pointer;transition:all 0.3s">✨ Analyser</button>
+				</div>
+			</div>
+		</div>
+
+		<!-- LOADING PAGE -->
+		<div id="loading-page" class="page">
+			<div class="page-content" style="display:flex;align-items:center;justify-content:center;height:100%">
+				<div style="text-align:center;padding:40px 20px">
+					<div style="background:linear-gradient(135deg, rgba(255,255,255,0.92), rgba(249,243,255,0.85));border-radius:24px;padding:60px 40px;box-shadow:0 16px 48px rgba(236,72,153,0.15);max-width:400px;margin:0 auto">
+						<div style="width:80px;height:80px;background:linear-gradient(135deg, #7c3aed, #ec4899);border-radius:50%;margin:0 auto 32px;display:flex;align-items:center;justify-content:center;font-size:2.5rem;box-shadow:0 8px 32px rgba(236,72,153,0.3);animation:pulse-scale 2s ease-in-out infinite">✨</div>
+						<h2 style="font-size:1.4rem;color:#2d1b69;margin:0 0 16px 0;font-weight:800;background:linear-gradient(135deg, #7c3aed, #ec4899);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">Analyse de ton profil</h2>
+						<p id="loadingMessage" style="color:#6b4a9f;font-size:0.9rem;margin:0 0 24px 0">L'IA analyse ta photo + ton profil...</p>
+						<div style="display:flex;justify-content:center;gap:6px">
+							<span class="loading-dot" style="animation-delay:0s"></span>
+							<span class="loading-dot" style="animation-delay:0.2s"></span>
+							<span class="loading-dot" style="animation-delay:0.4s"></span>
+							<span class="loading-dot" style="animation-delay:0.6s"></span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- RESULTS PAGE -->
+		<div id="results-page" class="page">
+			<div class="page-content">
+				<div style="padding:20px 0">
+					<button onclick="goPage('upload')" style="margin:20px 20px 16px 20px;background:linear-gradient(135deg, #f3e8ff, #fce7f3);color:#5d3396;border:1.5px solid rgba(124,58,237,0.2);box-shadow:0 2px 8px rgba(93,51,154,0.08)">← Retour</button>
+					
+					<!-- Summary Card -->
+					<div id="summaryCard" style="margin:0 20px 24px 20px;background:linear-gradient(135deg, rgba(236,72,153,0.1), rgba(124,58,237,0.08));border-left:5px solid #ec4899;border-radius:14px;padding:20px;color:#5d3396;font-size:0.95rem;line-height:1.7"></div>
+
+					<!-- Tab Navigation -->
+					<div id="recommendationsTabs" style="display:flex;gap:8px;margin:20px 20px 0 20px;overflow-x:auto;overflow-y:hidden;padding:0;scroll-behavior:smooth;-webkit-overflow-scrolling:touch;justify-content:flex-start">
+						<button class="tab-btn active" data-tab="skincare" onclick="showTab(event, 'skincare')" style="display:flex;align-items:center;gap:6px;flex-shrink:0">💆 Peau</button>
+						<button class="tab-btn" data-tab="hair" onclick="showTab(event, 'hair')" style="display:flex;align-items:center;gap:6px;flex-shrink:0">💇 Cheveux</button>
+						<button class="tab-btn" data-tab="makeup" onclick="showTab(event, 'makeup')" style="display:flex;align-items:center;gap:6px;flex-shrink:0">💄 Maquillage</button>
+						<button class="tab-btn" data-tab="clothes" onclick="showTab(event, 'clothes')" style="display:flex;align-items:center;gap:6px;flex-shrink:0">👕 Vêtements</button>
+						<button class="tab-btn" data-tab="accessories" onclick="showTab(event, 'accessories')" style="display:flex;align-items:center;gap:6px;flex-shrink:0">✨ Accessoires</button>
+						<button class="tab-btn" data-tab="shoes" onclick="showTab(event, 'shoes')" style="display:flex;align-items:center;gap:6px;flex-shrink:0">👠 Chaussures</button>
+					</div>
+
+					<!-- Content Tabs -->
+					<div id="skincare-content" class="tab-content active" style="padding:16px 20px 0 20px"></div>
+					<div id="hair-content" class="tab-content" style="padding:16px 20px 0 20px"></div>
+					<div id="makeup-content" class="tab-content" style="padding:16px 20px 0 20px"></div>
+					<div id="clothes-content" class="tab-content" style="padding:16px 20px 0 20px"></div>
+					<div id="accessories-content" class="tab-content" style="padding:16px 20px 0 20px"></div>
+					<div id="shoes-content" class="tab-content" style="padding:16px 20px 0 20px"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<style>
+		@keyframes spin {
+			to { transform: rotate(360deg); }
+		}
+		@keyframes pulse {
+			0%, 100% {
+				opacity: 1;
+			}
+			50% {
+				opacity: 0.5;
+			}
+		}
+		@keyframes float {
+			0%, 100% {
+				transform: translateY(0px);
+			}
+			50% {
+				transform: translateY(-20px);
+			}
+		}
+		@keyframes pulse-scale {
+			0%, 100% {
+				transform: scale(1);
+				opacity: 1;
+			}
+			50% {
+				transform: scale(1.1);
+				opacity: 0.9;
+			}
+		}
+		.loading-dot {
+			width: 8px;
+			height: 8px;
+			border-radius: 50%;
+			background: linear-gradient(135deg, #7c3aed, #ec4899);
+			animation: pulse-dot 1.4s ease-in-out infinite;
+		}
+		@keyframes pulse-dot {
+			0%, 100% {
+				opacity: 0.3;
+				transform: scale(1);
+			}
+			50% {
+				opacity: 1;
+				transform: scale(1.2);
+			}
+		}
+		.tab-btn {
+			padding: 11px 14px;
+			background: linear-gradient(135deg, rgba(243,232,255,0.7), rgba(252,231,243,0.7));
+			color: #5d3396;
+			border: 1.5px solid rgba(124,58,237,0.25);
+			border-radius: 10px;
+			cursor: pointer;
+			font-weight: 600;
+			white-space: nowrap;
+			transition: all 0.25s;
+			font-size: 0.85rem;
+			backdrop-filter: blur(8px);
+		}
+		@media (min-width: 480px) {
+			.tab-btn {
+				padding: 10px 16px;
+				font-size: 0.9rem;
+			}
+		}
+		.tab-btn.active {
+			background: linear-gradient(135deg, #7c3aed, #ec4899);
+			color: #fff;
+			border-color: transparent;
+		}
+		.tab-btn:hover {
+			transform: translateY(-2px);
+		}
+		.tab-content {
+			display: none;
+		}
+		.tab-content.active {
+			display: block;
+		}
+		.rec-card {
+			background: linear-gradient(135deg, rgba(255,255,255,0.95), rgba(249,243,255,0.8));
+			border: 1px solid rgba(124,58,237,0.12);
+			border-radius: 16px;
+			padding: 16px;
+			margin-bottom: 16px;
+			box-shadow: 0 4px 16px rgba(93,51,154,0.08);
+		}
+		.rec-title {
+			font-weight: 700;
+			color: #7c3aed;
+			font-size: 1rem;
+			margin-bottom: 8px;
+		}
+		.rec-desc {
+			color: #5d3396;
+			font-size: 0.9rem;
+			line-height: 1.6;
+			margin-bottom: 12px;
+		}
+		.rec-tag {
+			display: inline-block;
+			background: rgba(124,58,237,0.1);
+			color: #5d3396;
+			padding: 4px 12px;
+			border-radius: 20px;
+			font-size: 0.8rem;
+			font-weight: 600;
+			margin-right: 8px;
+			margin-top: 4px;
+		}
+		.gender-select {
+			display: flex;
+			gap: 16px;
+			justify-content: center;
+			margin: 0 auto;
+		}
+		.gender-btn {
+			flex: 1;
+			max-width: 140px;
+			padding: 12px 20px;
+			background: linear-gradient(135deg, #f3e8ff, #fce7f3);
+			color: #5d3396;
+			border: 2px solid rgba(124,58,237,0.3);
+			border-radius: 10px;
+			font-size: 0.9rem;
+			font-weight: 700;
+			cursor: pointer;
+			transition: all 0.3s;
+		}
+		@media (min-width: 480px) {
+			.gender-btn {
+				max-width: 150px;
+				padding: 14px 24px;
+				font-size: 1rem;
+			}
+		}
+		.gender-btn:active {
+			transform: scale(0.96);
+		}
+		@media (hover: hover) {
+			.gender-btn:hover {
+				transform: translateY(-4px);
+				box-shadow: 0 8px 20px rgba(236,72,153,0.2);
+			}
+		}
+		.controls {
+			display: flex;
+			gap: 10px;
+			margin: 20px;
+			padding: 0;
+			width: calc(100% - 40px);
+		}
+		@media (min-width: 480px) {
+			.controls {
+				gap: 12px;
+			}
+		}
+		.controls button {
+			flex: 1;
+			padding: 12px 14px;
+			background: linear-gradient(135deg, #7c3aed, #ec4899);
+			color: #fff;
+			border: none;
+			border-radius: 10px;
+			font-size: 0.9rem;
+			font-weight: 700;
+			cursor: pointer;
+			transition: all 0.3s;
+		}
+		@media (min-width: 480px) {
+			.controls button {
+				padding: 14px 16px;
+				font-size: 0.95rem;
+			}
+		}
+		.controls button:active {
+			transform: scale(0.98);
+		}
+		@media (max-width: 479px) {
+			.title {
+				font-size: 1.6rem;
+				margin-bottom: 8px;
+			}
+			.subtitle {
+				font-size: 0.9rem;
+			}
+			h1 {
+				font-size: 1.3rem;
+			}
+			.gender-select {
+				gap: 12px;
+			}
+		}
+	</style>
+
+	<script>
+		let currentGender = 'femme';
+		let currentPhoto = null;
+		const userProfile = {
+			name: "",
+			ageRange: "",
+			skinTone: "",
+			skinConcern: "",
+			budgetLevel: "",
+			targetStyle: ""
+		};
+
+		const BASE_STOCK_TARGET_PER_CATEGORY = 100;
+		const ADDITIONAL_STOCK_BY_GENDER_CATEGORY = {
+			femme: { skincare: 0, hair: 3, makeup: 70, clothes: 20, accessories: 2, shoes: 15 },
+			homme: { skincare: 50, hair: 3, makeup: 0, clothes: 20, accessories: 2, shoes: 15 }
+		};
+		const ADDITIONAL_STOCK_SECOND_PASS = {
+			femme: { skincare: 8, hair: 6, makeup: 52, clothes: 18, accessories: 6, shoes: 10 },
+			homme: { skincare: 38, hair: 6, makeup: 6, clothes: 18, accessories: 6, shoes: 26 }
+		};
+		const HAIR_TREND_STOCK_BOOST = {
+			femme: 100,
+			homme: 100
+		};
+		const MAKEUP_TREND_STOCK_BOOST = {
+			femme: 100,
+			homme: 100
+		};
+		const lastRecommendationSignature = {};
+
+		const unisexProductsByCategory = {
+			skincare: [
+				{ title: "Gel Moussant Visage", description: "Nettoyant quotidien qui enlève impuretés et excès de sébum sans agresser la peau.", brand: "CeraVe", indicator: "Abordable", price: "14,38€", tip: "Utiliser matin et soir sur peau humide.", targetContext: "Étape 1 - Nettoyer", skinFit: ["sensibilite", "acne", "brillance", "uniformite"], budgetTag: "abordable", priorityScore: 18, merchant: "Lookfantastic", url: "https://www.lookfantastic.fr/search?search=Gel+Moussant+Visage+CeraVe+236+ml", linkLabel: "Voir sur Lookfantastic", isUnisex: true, genderTarget: "unisex", ageTargets: ["ado", "adulte", "senior"] },
+				{ title: "Baume Nettoyant a l'Avoine", description: "Baume huileux qui dissout maquillage et saletés tout en laissant la peau souple.", brand: "The INKEY List", indicator: "Abordable", price: "12,42€", tip: "Masser 30 secondes puis rincer à l'eau tiède.", targetContext: "Étape 1 - Nettoyer", skinFit: ["sensibilite", "secheresse", "uniformite"], budgetTag: "abordable", priorityScore: 17, merchant: "Lookfantastic", url: "https://www.lookfantastic.fr/search?search=The+INKEY+List+Oat+Cleansing+Balm+150+ml", linkLabel: "Voir sur Lookfantastic", isUnisex: true, genderTarget: "unisex", ageTargets: ["ado", "adulte", "senior"] },
+				{ title: "Solution Micellaire Tout en 1 Eau de Rose", description: "Eau micellaire douce pour nettoyer et démaquiller rapidement.", brand: "Garnier", indicator: "Abordable", price: "5,75€", tip: "Passer avec un coton sans rincer.", targetContext: "Étape 1 - Nettoyer", skinFit: ["sensibilite", "rougeurs", "uniformite"], budgetTag: "abordable", priorityScore: 16, merchant: "Lookfantastic", url: "https://www.lookfantastic.fr/search?search=Garnier+Solution+Micellaire+Tout+en+1+Eau+de+Rose+400+ml", linkLabel: "Voir sur Lookfantastic", isUnisex: true, genderTarget: "unisex", ageTargets: ["ado", "adulte", "senior"] },
+				{ title: "Exfoliant Glycolic Fix Scrub", description: "Exfoliant acides glycolique et salicylique pour lisser la peau et désincruster les pores.", brand: "NIP+FAB", indicator: "Indé", price: "14,63€", tip: "Utiliser 2 à 3 fois/semaine, pas tous les jours.", targetContext: "Étape 2 - Exfolier", skinFit: ["acne", "brillance", "uniformite"], budgetTag: "mix", priorityScore: 18, merchant: "Lookfantastic", url: "https://www.lookfantastic.fr/search?search=NIP+FAB+Glycolic+Fix+Scrub+75+ml", linkLabel: "Voir sur Lookfantastic", isUnisex: true, genderTarget: "unisex", ageTargets: ["ado", "adulte"] },
+				{ title: "Clear and Radiant Exfoliant Visage", description: "Exfoliant quotidien doux pour raviver l'éclat et unifier le teint.", brand: "Neutrogena", indicator: "Abordable", price: "6,90€", tip: "Appliquer en massage léger puis rincer.", targetContext: "Étape 2 - Exfolier", skinFit: ["uniformite", "brillance", "rougeurs"], budgetTag: "abordable", priorityScore: 16, merchant: "Lookfantastic", url: "https://www.lookfantastic.fr/search?search=Neutrogena+Clear+and+Radiant+Exfoliant+Visage+150+ml", linkLabel: "Voir sur Lookfantastic", isUnisex: true, genderTarget: "unisex", ageTargets: ["ado", "adulte", "senior"] },
+				{ title: "Exfoliant Points Noirs Pure Active", description: "Exfoliant anti-points noirs pour nettoyer les pores en profondeur.", brand: "Garnier", indicator: "Abordable", price: "6,77€", tip: "Insister sur la zone T, éviter le contour des yeux.", targetContext: "Étape 2 - Exfolier", skinFit: ["acne", "brillance"], budgetTag: "abordable", priorityScore: 15, merchant: "Lookfantastic", url: "https://www.lookfantastic.fr/search?search=Garnier+Pure+Active+Exfoliant+Points+Noirs+150+ml", linkLabel: "Voir sur Lookfantastic", isUnisex: true, genderTarget: "unisex", ageTargets: ["ado", "adulte"] },
+				{ title: "Vitamin-C Tonique", description: "Tonique antioxydant qui aide à corriger le teint terne et les taches.", brand: "Pixi", indicator: "Indé", price: "11,50€", tip: "Appliquer après nettoyage avec un coton ou les mains.", targetContext: "Étape 3 - Tonique", skinFit: ["uniformite", "rougeurs", "secheresse"], budgetTag: "mix", priorityScore: 17, merchant: "Lookfantastic", url: "https://www.lookfantastic.fr/search?search=PIXI+Vitamin-C+Tonique+100+ml", linkLabel: "Voir sur Lookfantastic", isUnisex: true, genderTarget: "unisex", ageTargets: ["ado", "adulte", "senior"] },
+				{ title: "Tonique Fleurs Rares", description: "Tonique doux à la rose et au jasmin pour apaiser et rééquilibrer le pH.", brand: "L'Oreal Paris", indicator: "Abordable", price: "6,77€", tip: "Utiliser matin et soir après le nettoyage.", targetContext: "Étape 3 - Tonique", skinFit: ["sensibilite", "secheresse", "rougeurs"], budgetTag: "abordable", priorityScore: 16, merchant: "Lookfantastic", url: "https://www.lookfantastic.fr/search?search=Tonique+Fleurs+Rares+L%27Oreal+Paris+400+ml", linkLabel: "Voir sur Lookfantastic", isUnisex: true, genderTarget: "unisex", ageTargets: ["ado", "adulte", "senior"] },
+				{ title: "Lotion Perfectrice de Peau au Thym", description: "Tonique purifiant pour rafraîchir la peau et réduire les brillances.", brand: "Garnier Bio", indicator: "Abordable", price: "6,77€", tip: "Parfait pour peaux mixtes à grasses.", targetContext: "Étape 3 - Tonique", skinFit: ["brillance", "acne", "uniformite"], budgetTag: "abordable", priorityScore: 15, merchant: "Lookfantastic", url: "https://www.lookfantastic.fr/search?search=Garnier+Bio+Lotion+Perfectrice+de+Peau+au+thym+150+ml", linkLabel: "Voir sur Lookfantastic", isUnisex: true, genderTarget: "unisex", ageTargets: ["ado", "adulte"] },
+				{ title: "Baume Hydratant", description: "Hydratant réparateur pour restaurer le confort cutané.", brand: "CeraVe", indicator: "Abordable", price: "8,05€", tip: "Appliquer sur peau propre après le tonique.", targetContext: "Étape 4 - Hydrater", skinFit: ["secheresse", "sensibilite", "uniformite"], budgetTag: "abordable", priorityScore: 18, merchant: "Lookfantastic", url: "https://www.lookfantastic.fr/search?search=Baume+Hydratant+CeraVe+50+ml", linkLabel: "Voir sur Lookfantastic", isUnisex: true, genderTarget: "unisex", ageTargets: ["ado", "adulte", "senior"] },
+				{ title: "Original Moisturiser", description: "Hydratant quotidien pour apaiser la peau et préserver l'hydratation.", brand: "Bulldog", indicator: "Abordable", price: "5,59€", tip: "Très utile après rasage ou nettoyage.", targetContext: "Étape 4 - Hydrater", skinFit: ["sensibilite", "secheresse", "rougeurs"], budgetTag: "abordable", priorityScore: 17, merchant: "Lookfantastic", url: "https://www.lookfantastic.fr/search?search=Bulldog+Original+Moisturiser+100ml", linkLabel: "Voir sur Lookfantastic", isUnisex: true, genderTarget: "unisex", ageTargets: ["ado", "adulte", "senior"] },
+				{ title: "Triple Active Creme Jour Multi-Protectrice", description: "Crème jour hydratante pour peaux normales à mixtes.", brand: "L'Oreal Paris", indicator: "Abordable", price: "8,61€", tip: "Appliquer en dernière étape du matin avant SPF.", targetContext: "Étape 4 - Hydrater", skinFit: ["secheresse", "uniformite", "brillance"], budgetTag: "abordable", priorityScore: 16, merchant: "Lookfantastic", url: "https://www.lookfantastic.fr/search?search=L%27Oreal+Paris+Triple+Active+Creme+Jour+50+ml", linkLabel: "Voir sur Lookfantastic", isUnisex: true, genderTarget: "unisex", ageTargets: ["ado", "adulte", "senior"] },
+				{ title: "Blemish and Pore Refining Serum 10% Niacinamide + 1% Zinc", description: "Sérum anti-imperfections qui réduit l'apparence des pores.", brand: "Revolution Skincare", indicator: "Abordable", price: "7,91€", tip: "Mettre 2-3 gouttes avant la crème.", targetContext: "Étape 5 - Sérum", skinFit: ["acne", "brillance", "uniformite"], budgetTag: "abordable", priorityScore: 18, merchant: "Lookfantastic", url: "https://www.lookfantastic.fr/search?search=Revolution+Skincare+Blemish+and+Pore+Refining+Serum+10%25+Niacinamide+1%25+Zinc", linkLabel: "Voir sur Lookfantastic", isUnisex: true, genderTarget: "unisex", ageTargets: ["ado", "adulte"] },
+				{ title: "Solution de Cafeine 5% + EGCG", description: "Sérum contour des yeux pour décongestionner et lisser le regard.", brand: "The Ordinary", indicator: "Abordable", price: "9,66€", tip: "Appliquer en petite quantité sous les yeux.", targetContext: "Étape 5 - Sérum", skinFit: ["uniformite", "secheresse", "rougeurs"], budgetTag: "abordable", priorityScore: 16, merchant: "Lookfantastic", url: "https://www.lookfantastic.fr/search?search=The+Ordinary+Caffeine+Solution+5%25+EGCG+30+ml", linkLabel: "Voir sur Lookfantastic", isUnisex: true, genderTarget: "unisex", ageTargets: ["ado", "adulte", "senior"] },
+				{ title: "Hyaluronic Acid Facial Serum", description: "Sérum hydratant pour repulper la peau et limiter ridules et tiraillements.", brand: "Q+A", indicator: "Abordable", price: "8,14€", tip: "Appliquer sur peau humide puis sceller avec une crème.", targetContext: "Étape 5 - Sérum", skinFit: ["secheresse", "sensibilite", "uniformite"], budgetTag: "abordable", priorityScore: 17, merchant: "Lookfantastic", url: "https://www.lookfantastic.fr/search?search=Q%2BA+Hyaluronic+Acid+Facial+Serum+30ml", linkLabel: "Voir sur Lookfantastic", isUnisex: true, genderTarget: "unisex", ageTargets: ["ado", "adulte", "senior"] }
+			],
+			hair: [
+				{ title: "Shampoing Doux Quotidien", description: "Convient aux cuirs chevelus sensibles.", brand: "Klorane", indicator: "Abordable", price: "8-14€", tip: "Masser sans agresser.", isUnisex: true },
+				{ title: "Soin Protecteur Thermique", description: "Protège les cheveux de la chaleur.", brand: "GHD", indicator: "Indé", price: "16-26€", tip: "Appliquer avant brushing.", isUnisex: true },
+				{ title: "Masque Nutrition Equilibre", description: "Nourrit sans alourdir la fibre.", brand: "Davines", indicator: "Luxe", price: "24-40€", tip: "Laisser poser 5 à 10 min.", isUnisex: true }
+			],
+			makeup: [
+				{ title: "Correcteur Teint Naturel", description: "Unifie discrètement le teint.", brand: "MAC", indicator: "Luxe", price: "22-35€", tip: "Appliquer localement.", isUnisex: true },
+				{ title: "Poudre Invisible", description: "Fixe le teint avec un rendu léger.", brand: "Laura Mercier", indicator: "Luxe", price: "32-48€", tip: "Dose fine sur zone T.", isUnisex: true },
+				{ title: "Baume Lèvres Soin", description: "Hydrate et protège les lèvres.", brand: "Burt's Bees", indicator: "Abordable", price: "4-10€", tip: "Réappliquer dans la journée.", isUnisex: true }
+			],
+			clothes: [
+				{ title: "Hoodie Premium", description: "Coupe moderne et confortable.", brand: "Uniqlo", indicator: "Abordable", price: "29-55€", tip: "Prendre une taille selon effet voulu.", isUnisex: true },
+				{ title: "Veste Overshirt", description: "Parfaite en superposition toute saison.", brand: "COS", indicator: "Indé", price: "90-160€", tip: "Porter ouverte pour plus de style.", isUnisex: true },
+				{ title: "T-Shirt Heavyweight", description: "Base solide pour looks casual.", brand: "Carhartt WIP", indicator: "Indé", price: "28-50€", tip: "Associer à un denim brut.", isUnisex: true }
+			],
+			accessories: [
+				{ title: "Lunettes Rectangulaires", description: "Silhouette nette et intemporelle.", brand: "Ray-Ban", indicator: "Luxe", price: "120-210€", tip: "Choisir une taille adaptée au visage.", isUnisex: true },
+				{ title: "Sac Crossbody Compact", description: "Pratique et urbain.", brand: "Herschel", indicator: "Abordable", price: "35-75€", tip: "Idéal pour les essentiels.", isUnisex: true },
+				{ title: "Montre Minimal Steel", description: "Finition propre pour tous styles.", brand: "Casio", indicator: "Abordable", price: "55-130€", tip: "Bracelet métal pour look chic.", isUnisex: true }
+			],
+			shoes: [
+				{ title: "Sneakers Lifestyle", description: "Confort et style au quotidien.", brand: "New Balance", indicator: "Abordable", price: "90-160€", tip: "Polyvalentes avec jeans ou pantalons droits.", isUnisex: true },
+				{ title: "Sneakers Blanches Clean", description: "Base élégante multi-looks.", brand: "Veja", indicator: "Indé", price: "105-150€", tip: "Nettoyer régulièrement les semelles.", isUnisex: true },
+				{ title: "Boots Urbaines", description: "Look affirmé pour mi-saison.", brand: "Dr. Martens", indicator: "Luxe", price: "140-230€", tip: "Les assouplir progressivement.", isUnisex: true }
+			]
+		};
+
+		const ageStyleProfiles = {
+			skincare: [
+				{ ageGroup: "enfant", styleProfile: "peau sensible", context: "routine tres douce et minimale" },
+				{ ageGroup: "ado", styleProfile: "anti-imperfections", context: "equilibre sebum et hydratation" },
+				{ ageGroup: "adulte", styleProfile: "eclat quotidien", context: "prevention taches et texture" },
+				{ ageGroup: "senior", styleProfile: "confort anti-ride", context: "nutrition et fermete" }
+			],
+			hair: [
+				{ ageGroup: "enfant", styleProfile: "entretien facile", context: "coiffage rapide et doux" },
+				{ ageGroup: "ado", styleProfile: "look tendance", context: "volume et texture moderne" },
+				{ ageGroup: "adulte", styleProfile: "style pro-casual", context: "tenue propre au quotidien" },
+				{ ageGroup: "senior", styleProfile: "volume naturel", context: "confort cuir chevelu" }
+			],
+			makeup: [
+				{ ageGroup: "enfant", styleProfile: "teinte legere", context: "fini naturel et discret" },
+				{ ageGroup: "ado", styleProfile: "fresh look", context: "effet glow leger et moderne" },
+				{ ageGroup: "adulte", styleProfile: "chic quotidien", context: "tenue bureau et soiree" },
+				{ ageGroup: "senior", styleProfile: "eclat doux", context: "texture confortable et lumineuse" }
+			],
+			clothes: [
+				{ ageGroup: "enfant", styleProfile: "confort urbain", context: "pieces faciles a porter" },
+				{ ageGroup: "ado", styleProfile: "street tendance", context: "looks dynamiques et actuels" },
+				{ ageGroup: "adulte", styleProfile: "smart casual", context: "equilibre entre style et pro" },
+				{ ageGroup: "senior", styleProfile: "elegance classique", context: "coupe nette et confort" }
+			],
+			accessories: [
+				{ ageGroup: "enfant", styleProfile: "pratique", context: "accessoires simples et solides" },
+				{ ageGroup: "ado", styleProfile: "mode expressive", context: "details visuels forts" },
+				{ ageGroup: "adulte", styleProfile: "minimal premium", context: "finition propre et polyvalence" },
+				{ ageGroup: "senior", styleProfile: "classique chic", context: "intemporel et confortable" }
+			],
+			shoes: [
+				{ ageGroup: "enfant", styleProfile: "confort actif", context: "amorti et maintien" },
+				{ ageGroup: "ado", styleProfile: "street style", context: "silhouette moderne et flexible" },
+				{ ageGroup: "adulte", styleProfile: "polyvalent", context: "usage quotidien et sortie" },
+				{ ageGroup: "senior", styleProfile: "stabilite chic", context: "confort longue duree" }
+			]
+		};
+
+		const seedProductsByGender = {
+			femme: {
+				skincare: [
+					{ title: "Gel Nettoyant Doux", description: "Nettoie la peau sans la dessécher.", brand: "CeraVe", indicator: "Abordable", price: "9-15€", tip: "Masser 30 secondes puis rincer." },
+					{ title: "Sérum Hydratant", description: "Apporte rebond et confort immédiat.", brand: "The Ordinary", indicator: "Abordable", price: "10-16€", tip: "Appliquer sur peau légèrement humide." },
+					{ title: "Crème Éclat", description: "Unifie et illumine le teint.", brand: "Laneige", indicator: "Indé", price: "24-38€", tip: "Utiliser matin et soir." },
+					{ title: "SPF Fluide", description: "Protection UV légère sans traces.", brand: "La Roche-Posay", indicator: "Abordable", price: "14-24€", tip: "Réappliquer en journée." },
+					{ title: "Baume Nettoyant a l'Avoine", description: "Démaquille et nettoie en douceur avec un fini confortable.", brand: "The INKEY List", indicator: "Abordable", price: "12,42€", tip: "Utiliser en premier nettoyage le soir.", targetContext: "Étape 1 - Nettoyer", skinFit: ["sensibilite", "secheresse", "uniformite"], budgetTag: "abordable", priorityScore: 17, merchant: "Lookfantastic", url: "https://www.lookfantastic.fr/search?search=The+INKEY+List+Oat+Cleansing+Balm+150+ml", linkLabel: "Voir sur Lookfantastic" },
+					{ title: "Vitamin-C Tonique", description: "Aide à corriger le teint terne et redonner de l'éclat.", brand: "Pixi", indicator: "Indé", price: "11,50€", tip: "Appliquer après le nettoyage.", targetContext: "Étape 3 - Tonique", skinFit: ["uniformite", "rougeurs"], budgetTag: "mix", priorityScore: 16, merchant: "Lookfantastic", url: "https://www.lookfantastic.fr/search?search=PIXI+Vitamin-C+Tonique+100+ml", linkLabel: "Voir sur Lookfantastic" },
+					{ title: "Hyaluronic Acid Facial Serum", description: "Hydrate profondément et améliore l'apparence des ridules.", brand: "Q+A", indicator: "Abordable", price: "8,14€", tip: "Appliquer avant la crème hydratante.", targetContext: "Étape 5 - Sérum", skinFit: ["secheresse", "sensibilite"], budgetTag: "abordable", priorityScore: 17, merchant: "Lookfantastic", url: "https://www.lookfantastic.fr/search?search=Q%2BA+Hyaluronic+Acid+Facial+Serum+30ml", linkLabel: "Voir sur Lookfantastic" }
+				],
+				hair: [
+					{ title: "Shampoing Hydratation", description: "Préserve la douceur et la brillance.", brand: "Briogeo", indicator: "Indé", price: "16-28€", tip: "Insister sur les racines.", styles: ["casual chic", "minimaliste"], ageTargets: ["ado", "adulte", "senior"], budgetTag: "mix", priorityScore: 17, merchant: "Lookfantastic", url: "https://www.lookfantastic.fr/search?search=Briogeo+Hydrating+Shampoo", linkLabel: "Voir sur Lookfantastic" },
+					{ title: "Masque Nourrissant", description: "Lisse les longueurs et réduit les frisottis.", brand: "Olaplex", indicator: "Luxe", price: "28-42€", tip: "Poser 8 à 10 minutes.", styles: ["casual chic", "quiet luxury"], ageTargets: ["ado", "adulte", "senior"], budgetTag: "premium", priorityScore: 18, merchant: "Lookfantastic", url: "https://www.lookfantastic.fr/search?search=Olaplex+Hair+Mask", linkLabel: "Voir sur Lookfantastic" },
+					{ title: "Spray Volume Racines", description: "Donne du volume naturel.", brand: "Tresemme", indicator: "Abordable", price: "8-13€", tip: "Utiliser avant brushing.", styles: ["casual chic", "business casual"], ageTargets: ["ado", "adulte"], budgetTag: "abordable", priorityScore: 15, merchant: "Amazon", url: "https://www.amazon.fr/s?k=Tresemme+spray+volume+racines", linkLabel: "Voir le produit" },
+					{ title: "Soin Pointes", description: "Limite la casse et apporte de la brillance.", brand: "Moroccanoil", indicator: "Luxe", price: "24-36€", tip: "1 noisette sur pointes seulement.", styles: ["old money", "quiet luxury"], ageTargets: ["ado", "adulte", "senior"], budgetTag: "premium", priorityScore: 16, merchant: "Lookfantastic", url: "https://www.lookfantastic.fr/search?search=Moroccanoil+Treatment", linkLabel: "Voir sur Lookfantastic" },
+					{ title: "Wave Spray", description: "Texture souple et effet wavy sans coller.", brand: "OUAI", indicator: "Indé", price: "22-31€", tip: "Vaporiser sur cheveux humides puis froisser.", styles: ["y2k", "boho moderne", "streetwear"], ageTargets: ["ado", "adulte"], budgetTag: "mix", priorityScore: 18, merchant: "Sephora", url: "https://www.sephora.fr/search?text=OUAI+Wave+Spray", linkLabel: "Voir le produit" },
+					{ title: "Full Dry Volume & Texture Spray", description: "Volume immédiat et matière légère.", brand: "Living Proof", indicator: "Luxe", price: "28-39€", tip: "Appliquer sur cheveux secs à distance.", styles: ["streetwear", "casual chic", "k-fashion"], ageTargets: ["ado", "adulte"], budgetTag: "premium", priorityScore: 19, merchant: "Lookfantastic", url: "https://www.lookfantastic.fr/search?search=Living+Proof+Dry+Volume+Texture+Spray", linkLabel: "Voir sur Lookfantastic" },
+					{ title: "Thickening Dryspun Texture Spray", description: "Donne du corps et une texture aérienne.", brand: "Bumble and bumble", indicator: "Luxe", price: "28-38€", tip: "Cibler les longueurs pour un rendu souple.", styles: ["minimaliste", "casual chic", "parisian chic"], ageTargets: ["ado", "adulte", "senior"], budgetTag: "premium", priorityScore: 18, merchant: "Lookfantastic", url: "https://www.lookfantastic.fr/search?search=Bumble+and+bumble+Dryspun+Texture+Spray", linkLabel: "Voir sur Lookfantastic" },
+					{ title: "Volumizing Texture Spray", description: "Fixation légère avec boost de volume.", brand: "Verb", indicator: "Indé", price: "16-24€", tip: "Soulever les racines pendant l'application.", styles: ["streetwear", "minimaliste"], ageTargets: ["ado", "adulte"], budgetTag: "mix", priorityScore: 17, merchant: "Sephora", url: "https://www.sephora.fr/search?text=Verb+Volumizing+Texture+Spray", linkLabel: "Voir le produit" },
+					{ title: "Un.Done Volume and Matte Texture Spray", description: "Fini mat moderne pour coiffage rapide.", brand: "amika", indicator: "Indé", price: "24-32€", tip: "Parfait sur coupe mi-longue et dégradée.", styles: ["streetwear", "grunge", "y2k"], ageTargets: ["ado", "adulte"], budgetTag: "mix", priorityScore: 18, merchant: "Lookfantastic", url: "https://www.lookfantastic.fr/search?search=amika+Un.Done+Volume+Texture+Spray", linkLabel: "Voir sur Lookfantastic" },
+					{ title: "Raise The Root Thicken + Lift Spray", description: "Lifting racines sans effet carton.", brand: "Color Wow", indicator: "Luxe", price: "24-34€", tip: "Sécher au sèche-cheveux pour activer l'effet.", styles: ["business casual", "classique elegant"], ageTargets: ["adulte", "senior"], budgetTag: "premium", priorityScore: 17, merchant: "Lookfantastic", url: "https://www.lookfantastic.fr/search?search=Color+Wow+Raise+The+Root", linkLabel: "Voir sur Lookfantastic" },
+					{ title: "Densimorphose Mousse", description: "Mousse densifiante pour cheveux fins.", brand: "Kerastase", indicator: "Luxe", price: "28-40€", tip: "Appliquer sur cheveux humides des racines aux longueurs.", styles: ["classique elegant", "quiet luxury"], ageTargets: ["adulte", "senior"], budgetTag: "premium", priorityScore: 16, merchant: "Lookfantastic", url: "https://www.lookfantastic.fr/search?search=Kerastase+Densimorphose", linkLabel: "Voir sur Lookfantastic" },
+					{ title: "Mousse Boucles Avancee", description: "Définit les boucles et limite les frisottis.", brand: "L'Oréal Professionnel", indicator: "Indé", price: "16-25€", tip: "Scrunch sur cheveux humides puis diffuser.", styles: ["k-fashion", "boho moderne", "casual chic"], ageTargets: ["ado", "adulte"], budgetTag: "mix", priorityScore: 15, merchant: "Amazon", url: "https://www.amazon.fr/s?k=L%27Or%C3%A9al+Professionnel+mousse+boucles", linkLabel: "Voir le produit" }
+				],
+				makeup: [
+					{ title: "Skin Tint Glow", description: "Unifie le teint avec un fini naturel.", brand: "Fenty Beauty", indicator: "Indé", price: "25-39€", tip: "Appliquer en fine couche.", styles: ["minimaliste", "casual chic"], skinFit: ["sensibilite", "secheresse", "uniformite"], ageTargets: ["ado", "adulte"], budgetTag: "mix", priorityScore: 20, merchant: "Sephora", url: "https://www.sephora.fr/search?text=Fenty+Beauty+skin+tint", linkLabel: "Voir le produit" },
+					{ title: "Concealer Lumière", description: "Corrige sans alourdir le contour des yeux.", brand: "NARS", indicator: "Luxe", price: "26-36€", tip: "Tapoter au doigt.", styles: ["quiet luxury", "casual chic"], skinFit: ["uniformite", "sensibilite"], ageTargets: ["ado", "adulte", "senior"], budgetTag: "premium", priorityScore: 19, merchant: "Sephora", url: "https://www.sephora.fr/search?text=NARS+Radiant+Creamy+Concealer", linkLabel: "Voir le produit" },
+					{ title: "Cream Blush", description: "Effet bonne mine immédiat.", brand: "Rare Beauty", indicator: "Indé", price: "20-30€", tip: "Poser haut sur les pommettes.", styles: ["coquette", "casual chic", "y2k"], skinFit: ["uniformite", "secheresse"], ageTargets: ["ado", "adulte"], budgetTag: "mix", priorityScore: 20, merchant: "Sephora", url: "https://www.sephora.fr/search?text=Rare+Beauty+cream+blush", linkLabel: "Voir le produit" },
+					{ title: "Mascara Volume", description: "Ouvre le regard et intensifie les cils.", brand: "Maybelline", indicator: "Abordable", price: "8-13€", tip: "Mouvement zigzag à la racine.", styles: ["y2k", "streetwear", "casual chic"], skinFit: ["sensibilite", "uniformite"], ageTargets: ["ado", "adulte"], budgetTag: "abordable", priorityScore: 19, merchant: "Amazon", url: "https://www.amazon.fr/s?k=Maybelline+mascara+volume", linkLabel: "Voir le produit" },
+					{ title: "Fond de Teint Airbrush", description: "Fini lisse et longue tenue sans effet masque.", brand: "Charlotte Tilbury", indicator: "Luxe", price: "42-58€", tip: "Appliquer au pinceau en couche fine.", styles: ["quiet luxury", "classique elegant"], skinFit: ["uniformite", "secheresse"], ageTargets: ["adulte", "senior"], budgetTag: "premium", priorityScore: 18, merchant: "Sephora", url: "https://www.sephora.fr/search?text=Charlotte+Tilbury+Airbrush+Foundation", linkLabel: "Voir le produit" },
+					{ title: "Palette Nude Essentials", description: "Teintes neutres faciles à porter au quotidien.", brand: "Huda Beauty", indicator: "Indé", price: "29-45€", tip: "Commencer avec les tons mats sur la paupière.", styles: ["y2k", "coquette", "casual chic"], skinFit: ["uniformite"], ageTargets: ["ado", "adulte"], budgetTag: "mix", priorityScore: 18, merchant: "Sephora", url: "https://www.sephora.fr/search?text=Huda+Beauty+nude+palette", linkLabel: "Voir le produit" },
+					{ title: "Fixateur Makeup Mist", description: "Prolonge la tenue et garde un rendu frais.", brand: "NYX", indicator: "Abordable", price: "10-18€", tip: "2 à 3 sprays à 20 cm du visage.", styles: ["streetwear", "y2k", "minimaliste"], skinFit: ["brillance", "uniformite"], ageTargets: ["ado", "adulte"], budgetTag: "abordable", priorityScore: 20, merchant: "Amazon", url: "https://www.amazon.fr/s?k=NYX+setting+spray", linkLabel: "Voir le produit" },
+					{ title: "Soft Pinch Liquid Blush", description: "Blush liquide longue tenue ultra populaire.", brand: "Rare Beauty", indicator: "Indé", price: "24-32€", tip: "Une micro-goutte suffit.", styles: ["coquette", "y2k", "k-fashion"], skinFit: ["uniformite", "secheresse"], ageTargets: ["ado", "adulte"], budgetTag: "mix", priorityScore: 22, merchant: "Sephora", url: "https://www.sephora.fr/search?text=Rare+Beauty+Soft+Pinch+Liquid+Blush", linkLabel: "Voir le produit" },
+					{ title: "Halo Glow Liquid Filter", description: "Glow booster tendance pour effet peau lumineuse.", brand: "e.l.f.", indicator: "Abordable", price: "14-20€", tip: "Utiliser seul ou sous le fond de teint.", styles: ["y2k", "coquette", "casual chic"], skinFit: ["secheresse", "uniformite"], ageTargets: ["ado", "adulte"], budgetTag: "abordable", priorityScore: 22, merchant: "Amazon", url: "https://www.amazon.fr/s?k=e.l.f.+Halo+Glow+Liquid+Filter", linkLabel: "Voir le produit" },
+					{ title: "Power Grip Primer + Niacinamide", description: "Primer adhérent pour meilleure tenue du makeup.", brand: "e.l.f.", indicator: "Abordable", price: "12-18€", tip: "Laisser poser 30 secondes avant le teint.", styles: ["streetwear", "minimaliste"], skinFit: ["brillance", "acne", "uniformite"], ageTargets: ["ado", "adulte"], budgetTag: "abordable", priorityScore: 21, merchant: "Amazon", url: "https://www.amazon.fr/s?k=e.l.f.+Power+Grip+Primer+Niacinamide", linkLabel: "Voir le produit" },
+					{ title: "Born This Way Concealer", description: "Concealer couvrant et lumineux très apprécié.", brand: "Too Faced", indicator: "Luxe", price: "28-38€", tip: "Fixer légèrement pour un rendu longue tenue.", styles: ["casual chic", "business casual"], skinFit: ["uniformite", "secheresse"], ageTargets: ["ado", "adulte"], budgetTag: "premium", priorityScore: 19, merchant: "Sephora", url: "https://www.sephora.fr/search?text=Too+Faced+Born+This+Way+Concealer", linkLabel: "Voir le produit" },
+					{ title: "Lip Oil Glow Reviver", description: "Huile lèvres hydratante tendance effet glossy.", brand: "e.l.f.", indicator: "Abordable", price: "8-13€", tip: "Parfait en retouche rapide.", styles: ["coquette", "y2k", "k-fashion"], skinFit: ["secheresse", "sensibilite"], ageTargets: ["ado", "adulte"], budgetTag: "abordable", priorityScore: 20, merchant: "Amazon", url: "https://www.amazon.fr/s?k=e.l.f.+Glow+Reviver+Lip+Oil", linkLabel: "Voir le produit" },
+					{ title: "Shape Tape Concealer", description: "Concealer iconique pour couvrance modulable.", brand: "Tarte", indicator: "Indé", price: "23-33€", tip: "Hydrater le contour des yeux avant application.", styles: ["minimaliste", "casual chic"], skinFit: ["uniformite", "secheresse"], ageTargets: ["ado", "adulte", "senior"], budgetTag: "mix", priorityScore: 19, merchant: "Sephora", url: "https://www.sephora.fr/search?text=Tarte+Shape+Tape+Concealer", linkLabel: "Voir le produit" },
+					{ title: "Cloud Paint", description: "Blush gel-crème naturel très populaire.", brand: "Glossier", indicator: "Indé", price: "18-26€", tip: "Tapoter au doigt pour un rendu fondu.", styles: ["minimaliste", "parisian chic", "coquette"], skinFit: ["sensibilite", "secheresse"], ageTargets: ["ado", "adulte"], budgetTag: "mix", priorityScore: 20, merchant: "Sephora", url: "https://www.sephora.fr/search?text=Glossier+Cloud+Paint", linkLabel: "Voir le produit" }
+				],
+				clothes: [
+					{ title: "Blazer Ajusté", description: "Structure la silhouette avec élégance.", brand: "COS", indicator: "Indé", price: "100-160€", tip: "Porter avec un top simple." },
+					{ title: "Jean Taille Haute", description: "Allonge la jambe et reste confortable.", brand: "Reformation", indicator: "Indé", price: "70-110€", tip: "Coupe droite pour plus de polyvalence." },
+					{ title: "Robe Midi Fluide", description: "Pièce facile et féminine.", brand: "Mango", indicator: "Abordable", price: "45-80€", tip: "Ajouter une ceinture fine." },
+					{ title: "Chemise Blanche", description: "Basique chic pour looks habillés ou casual.", brand: "Uniqlo", indicator: "Abordable", price: "20-35€", tip: "Rentrer un seul pan pour un style moderne." },
+					{ title: "Pantalon Tailoring", description: "Coupe nette pour un look premium.", brand: "& Other Stories", indicator: "Indé", price: "55-95€", tip: "Associer avec blazer ton sur ton." },
+					{ title: "Trench Léger", description: "Pièce intemporelle idéale en mi-saison.", brand: "Sezane", indicator: "Luxe", price: "140-240€", tip: "Porter ouvert pour allonger la silhouette." }
+				],
+				accessories: [
+					{ title: "Boucles Statement", description: "Ajoute du caractère à la tenue.", brand: "Baublebar", indicator: "Indé", price: "20-40€", tip: "Idéal avec cheveux attachés." },
+					{ title: "Sac Bandoulière Cuir", description: "Pratique et élégant au quotidien.", brand: "Matt & Nat", indicator: "Indé", price: "90-150€", tip: "Choisir une couleur neutre." },
+					{ title: "Colliers Superposés", description: "Donne de la profondeur au look.", brand: "Etsy Maker", indicator: "Indé", price: "15-35€", tip: "Mixer 2 ou 3 longueurs." },
+					{ title: "Foulard Satin", description: "Accessoire polyvalent et raffiné.", brand: "Sezane", indicator: "Luxe", price: "40-75€", tip: "Nouer au cou ou au sac." }
+				],
+				shoes: [
+					{ title: "Sneakers Blanches", description: "Base clean pour tous les styles.", brand: "Veja", indicator: "Indé", price: "100-130€", tip: "Parfaites avec jean ou robe midi." },
+					{ title: "Ballerines", description: "Confortables et élégantes au quotidien.", brand: "Repetto", indicator: "Luxe", price: "120-185€", tip: "Version pointue pour allonger la jambe." },
+					{ title: "Sandales Bride", description: "Silhouette chic pour l'été.", brand: "Aldo", indicator: "Abordable", price: "50-95€", tip: "Très bien avec robe fluide." },
+					{ title: "Bottines Chelsea", description: "Ajoute du caractère en mi-saison.", brand: "Vagabond", indicator: "Indé", price: "130-190€", tip: "Créer un contraste avec une jupe midi." },
+					{ title: "Escarpins Bloc", description: "Hauteur confortable pour les looks habillés.", brand: "Jonak", indicator: "Indé", price: "85-140€", tip: "Privilégier un talon 5 à 7 cm." },
+					{ title: "Mules Minimalistes", description: "Rapides à enfiler avec allure chic.", brand: "Mango", indicator: "Abordable", price: "35-65€", tip: "Parfaites avec jean droit ou robe midi." }
+				]
+			},
+			homme: {
+				skincare: [
+					{ title: "Gel Nettoyant Purifiant", description: "Nettoie le visage et réduit l'excès de sébum.", brand: "Bulldog", indicator: "Abordable", price: "8-14€", tip: "Utiliser matin et soir." },
+					{ title: "Sérum Niacinamide", description: "Affinage du grain de peau et teint plus uniforme.", brand: "The Ordinary", indicator: "Abordable", price: "10-16€", tip: "Commencer 1 jour sur 2." },
+					{ title: "Crème Hydratante Matifiante", description: "Hydrate sans effet gras.", brand: "Clinique Men", indicator: "Luxe", price: "25-40€", tip: "Appliquer après nettoyage." },
+					{ title: "SPF Invisible", description: "Protection UV quotidienne sans traces.", brand: "La Roche-Posay", indicator: "Abordable", price: "14-24€", tip: "Réappliquer si exposition prolongée." },
+					{ title: "Gel Rasage Apaisant", description: "Réduit les irritations après rasage.", brand: "Nivea Men", indicator: "Abordable", price: "6-12€", tip: "Appliquer sur peau humide avant rasage." },
+					{ title: "Baume Après-Rasage", description: "Apaise et hydrate immédiatement.", brand: "Vichy Homme", indicator: "Indé", price: "14-25€", tip: "Tapoter sans frotter après rasage." },
+					{ title: "Crème Anti-Fatigue", description: "Réveille les traits et améliore l'éclat.", brand: "Kiehl's", indicator: "Luxe", price: "28-46€", tip: "Utiliser le matin sur peau propre." },
+					{ title: "Gel Moussant Visage", description: "Nettoyage quotidien efficace et doux.", brand: "CeraVe", indicator: "Abordable", price: "14,38€", tip: "Nettoyer matin et soir.", targetContext: "Étape 1 - Nettoyer", skinFit: ["acne", "brillance", "sensibilite"], budgetTag: "abordable", priorityScore: 18, merchant: "Lookfantastic", url: "https://www.lookfantastic.fr/search?search=Gel+Moussant+Visage+CeraVe+236+ml", linkLabel: "Voir sur Lookfantastic" },
+					{ title: "Original Moisturiser", description: "Hydratant simple et efficace pour usage quotidien.", brand: "Bulldog", indicator: "Abordable", price: "5,59€", tip: "Idéal après rasage ou nettoyage.", targetContext: "Étape 4 - Hydrater", skinFit: ["sensibilite", "secheresse", "rougeurs"], budgetTag: "abordable", priorityScore: 17, merchant: "Lookfantastic", url: "https://www.lookfantastic.fr/search?search=Bulldog+Original+Moisturiser+100ml", linkLabel: "Voir sur Lookfantastic" },
+					{ title: "Blemish and Pore Refining Serum", description: "Niacinamide + zinc pour imperfections et pores visibles.", brand: "Revolution Skincare", indicator: "Abordable", price: "7,91€", tip: "Appliquer 2-3 gouttes avant la crème.", targetContext: "Étape 5 - Sérum", skinFit: ["acne", "brillance", "uniformite"], budgetTag: "abordable", priorityScore: 17, merchant: "Lookfantastic", url: "https://www.lookfantastic.fr/search?search=Revolution+Skincare+Blemish+and+Pore+Refining+Serum+10%25+Niacinamide+1%25+Zinc", linkLabel: "Voir sur Lookfantastic" }
+				],
+				hair: [
+					{ title: "Shampoing Fortifiant", description: "Nettoie et renforce la fibre capillaire.", brand: "American Crew", indicator: "Indé", price: "12-22€", tip: "Masser 1 minute puis rincer.", styles: ["smart urbain", "business casual"], ageTargets: ["ado", "adulte", "senior"], budgetTag: "mix", priorityScore: 16, merchant: "Amazon", url: "https://www.amazon.fr/s?k=American+Crew+shampoo", linkLabel: "Voir le produit" },
+					{ title: "Pâte Coiffante Mate", description: "Fixation souple avec fini naturel.", brand: "Reuzel", indicator: "Indé", price: "14-24€", tip: "Chauffer entre les mains avant application.", styles: ["streetwear", "skater", "grunge"], ageTargets: ["ado", "adulte"], budgetTag: "mix", priorityScore: 18, merchant: "Amazon", url: "https://www.amazon.fr/s?k=Reuzel+matte+paste", linkLabel: "Voir le produit" },
+					{ title: "Spray Texture", description: "Ajoute volume et tenue sans rigidité.", brand: "L'Oreal Men Expert", indicator: "Abordable", price: "8-16€", tip: "Vaporiser sur cheveux secs.", styles: ["streetwear", "casual chic"], ageTargets: ["ado", "adulte"], budgetTag: "abordable", priorityScore: 16, merchant: "Amazon", url: "https://www.amazon.fr/s?k=L%27Or%C3%A9al+Men+Expert+spray+texture", linkLabel: "Voir le produit" },
+					{ title: "Soin Cuir Chevelu", description: "Apaise et équilibre le cuir chevelu.", brand: "Kiehl's", indicator: "Luxe", price: "24-38€", tip: "Utiliser avant le shampoing.", styles: ["minimaliste", "business casual"], ageTargets: ["adulte", "senior"], budgetTag: "premium", priorityScore: 14, merchant: "Sephora", url: "https://www.sephora.fr/search?text=Kiehl%27s+scalp+treatment", linkLabel: "Voir le produit" },
+					{ title: "OSiS+ Dust It Mattifying Powder", description: "Poudre texturisante mate ultra efficace pour volume et tenue instantanée.", brand: "Schwarzkopf Professional", indicator: "Indé", price: "10-16€", tip: "Mettre une petite dose aux racines puis travailler aux doigts.", styles: ["streetwear", "skater", "y2k", "grunge"], ageTargets: ["ado", "adulte"], budgetTag: "mix", priorityScore: 26, merchant: "Amazon", url: "https://www.amazon.fr/s?k=Schwarzkopf+OSiS+Dust+It", linkLabel: "Voir le produit" },
+					{ title: "Hair Styling Texturizing Powder", description: "Poudre volume mate très populaire pour looks jeunes.", brand: "Slick Gorilla", indicator: "Indé", price: "10-16€", tip: "Parfait pour crop, taper et coiffures texturées.", styles: ["streetwear", "skater", "k-fashion", "y2k"], ageTargets: ["ado", "adulte"], budgetTag: "mix", priorityScore: 27, merchant: "Amazon", url: "https://www.amazon.fr/s?k=Slick+Gorilla+Hair+Styling+Powder", linkLabel: "Voir le produit" },
+					{ title: "Boost Powder", description: "Poudre volumatrice facile à utiliser, fini naturel.", brand: "American Crew", indicator: "Indé", price: "14-22€", tip: "Déposer sur racines sèches pour un lift rapide.", styles: ["streetwear", "smart urbain"], ageTargets: ["ado", "adulte"], budgetTag: "mix", priorityScore: 24, merchant: "Amazon", url: "https://www.amazon.fr/s?k=American+Crew+Boost+Powder", linkLabel: "Voir le produit" },
+					{ title: "Styling Powder", description: "Texture mate et volume en quelques secondes.", brand: "Uppercut Deluxe", indicator: "Indé", price: "14-22€", tip: "Idéal pour styles relâchés et mouvement naturel.", styles: ["streetwear", "workwear", "skater"], ageTargets: ["ado", "adulte"], budgetTag: "mix", priorityScore: 24, merchant: "Amazon", url: "https://www.amazon.fr/s?k=Uppercut+Deluxe+Styling+Powder", linkLabel: "Voir le produit" },
+					{ title: "Powder'ful Volumizing Styling Powder", description: "Poudre abordable pour volume durable et effet mat.", brand: "got2b", indicator: "Abordable", price: "5-9€", tip: "Très bon rapport qualité/prix pour ados.", styles: ["streetwear", "y2k", "skater"], ageTargets: ["ado", "adulte"], budgetTag: "abordable", priorityScore: 25, merchant: "Amazon", url: "https://www.amazon.fr/s?k=got2b+Powderful", linkLabel: "Voir le produit" },
+					{ title: "Powder Grip 03", description: "Grip et volume pour styles texturés modernes.", brand: "Redken", indicator: "Indé", price: "16-24€", tip: "Utiliser sur cheveux secs pour finition.", styles: ["streetwear", "smart urbain", "workwear"], ageTargets: ["ado", "adulte"], budgetTag: "mix", priorityScore: 23, merchant: "Lookfantastic", url: "https://www.lookfantastic.fr/search?search=Redken+Powder+Grip+03", linkLabel: "Voir sur Lookfantastic" },
+					{ title: "Tecni.Art Super Dust", description: "Poudre pro pour texture mate et volume racines.", brand: "L'Oreal Professionnel", indicator: "Indé", price: "16-24€", tip: "Appliquer peu à peu pour éviter la surcharge.", styles: ["streetwear", "business casual"], ageTargets: ["ado", "adulte"], budgetTag: "mix", priorityScore: 23, merchant: "Amazon", url: "https://www.amazon.fr/s?k=L%27Or%C3%A9al+Tecni.Art+Super+Dust", linkLabel: "Voir le produit" },
+					{ title: "Grooming Goods Matte Paste", description: "Pâte matte tendance pour coupe moderne et tenue souple.", brand: "STMNT", indicator: "Luxe", price: "18-28€", tip: "Parfaite en combo avec une poudre texturisante.", styles: ["streetwear", "classique elegant", "smart urbain"], ageTargets: ["ado", "adulte"], budgetTag: "premium", priorityScore: 20, merchant: "Amazon", url: "https://www.amazon.fr/s?k=STMNT+matte+paste", linkLabel: "Voir le produit" }
+				],
+				makeup: [
+					{ title: "Correcteur Anti-Cernes", description: "Corrige discrètement les cernes.", brand: "War Paint", indicator: "Indé", price: "15-24€", tip: "Tapoter sans étaler fort.", styles: ["minimaliste", "smart urbain"], skinFit: ["uniformite", "sensibilite"], ageTargets: ["ado", "adulte", "senior"], budgetTag: "mix", priorityScore: 18, merchant: "Amazon", url: "https://www.amazon.fr/s?k=War+Paint+concealer", linkLabel: "Voir le produit" },
+					{ title: "BB Cream Matifiante", description: "Uniformise le teint avec rendu naturel.", brand: "Lab Series", indicator: "Luxe", price: "28-45€", tip: "Appliquer en fine couche.", styles: ["business casual", "smart urbain"], skinFit: ["brillance", "uniformite"], ageTargets: ["ado", "adulte"], budgetTag: "premium", priorityScore: 17, merchant: "Amazon", url: "https://www.amazon.fr/s?k=Lab+Series+BB+cream", linkLabel: "Voir le produit" },
+					{ title: "Gel Sourcils Transparent", description: "Fixe les sourcils sans effet maquillé.", brand: "Anastasia", indicator: "Luxe", price: "19-28€", tip: "Brosser vers le haut.", styles: ["minimaliste", "classique elegant"], skinFit: ["uniformite"], ageTargets: ["ado", "adulte"], budgetTag: "premium", priorityScore: 16, merchant: "Sephora", url: "https://www.sephora.fr/search?text=Anastasia+brow+gel", linkLabel: "Voir le produit" },
+					{ title: "Baume Lèvres Teinté Léger", description: "Hydrate et ravive légèrement la couleur.", brand: "Nivea Men", indicator: "Abordable", price: "4-8€", tip: "Réappliquer après repas.", styles: ["streetwear", "minimaliste"], skinFit: ["secheresse", "sensibilite"], ageTargets: ["ado", "adulte", "senior"], budgetTag: "abordable", priorityScore: 18, merchant: "Amazon", url: "https://www.amazon.fr/s?k=Nivea+Men+tinted+lip+balm", linkLabel: "Voir le produit" },
+					{ title: "Men's Concealer Pen", description: "Stylo correcteur discret pour teint frais.", brand: "MMUK MAN", indicator: "Indé", price: "16-24€", tip: "Cibler cernes et rougeurs ponctuelles.", styles: ["smart urbain", "business casual"], skinFit: ["uniformite", "rougeurs"], ageTargets: ["ado", "adulte"], budgetTag: "mix", priorityScore: 19, merchant: "Amazon", url: "https://www.amazon.fr/s?k=MMUK+MAN+concealer+pen", linkLabel: "Voir le produit" },
+					{ title: "Anti-Shine Face Primer", description: "Primer anti-brillance pour tenir toute la journée.", brand: "Bulldog", indicator: "Abordable", price: "9-14€", tip: "Appliquer sur zone T avant le teint.", styles: ["streetwear", "workwear", "smart urbain"], skinFit: ["brillance", "acne"], ageTargets: ["ado", "adulte"], budgetTag: "abordable", priorityScore: 20, merchant: "Amazon", url: "https://www.amazon.fr/s?k=Bulldog+anti+shine+primer", linkLabel: "Voir le produit" },
+					{ title: "Camo Concealer", description: "Concealer couvrant budget-friendly très tendance.", brand: "e.l.f.", indicator: "Abordable", price: "7-12€", tip: "Tapoter légèrement pour un rendu naturel.", styles: ["streetwear", "minimaliste"], skinFit: ["uniformite", "acne"], ageTargets: ["ado", "adulte"], budgetTag: "abordable", priorityScore: 21, merchant: "Amazon", url: "https://www.amazon.fr/s?k=e.l.f.+Camo+Concealer", linkLabel: "Voir le produit" },
+					{ title: "Blur + Matte Setting Powder", description: "Poudre matifiante pour réduire la brillance rapidement.", brand: "Maybelline", indicator: "Abordable", price: "8-14€", tip: "Utiliser en fine couche sur front/nez.", styles: ["streetwear", "smart urbain"], skinFit: ["brillance", "acne"], ageTargets: ["ado", "adulte"], budgetTag: "abordable", priorityScore: 22, merchant: "Amazon", url: "https://www.amazon.fr/s?k=Maybelline+matte+setting+powder", linkLabel: "Voir le produit" },
+					{ title: "No Makeup Makeup Skin Perfector", description: "Unifie légèrement le teint sans effet maquillé.", brand: "War Paint", indicator: "Indé", price: "18-27€", tip: "Appliquer une couche très fine.", styles: ["minimaliste", "business casual"], skinFit: ["uniformite", "rougeurs"], ageTargets: ["ado", "adulte", "senior"], budgetTag: "mix", priorityScore: 20, merchant: "Amazon", url: "https://www.amazon.fr/s?k=War+Paint+skin+perfector", linkLabel: "Voir le produit" }
+				],
+				clothes: [
+					{ title: "Blazer Structuré", description: "Silhouette nette, facile à porter.", brand: "Massimo Dutti", indicator: "Indé", price: "120-190€", tip: "Associer à un jean brut." },
+					{ title: "Jean Coupe Droite", description: "Essentiel polyvalent du vestiaire.", brand: "Levi's", indicator: "Abordable", price: "65-110€", tip: "Ourlet léger pour montrer la chaussure." },
+					{ title: "Chemise Oxford", description: "Classique intemporel pour look smart-casual.", brand: "Uniqlo", indicator: "Abordable", price: "25-45€", tip: "Porter ouverte sur t-shirt blanc." },
+					{ title: "Pantalon Chino", description: "Alternative élégante au denim.", brand: "Dockers", indicator: "Indé", price: "40-80€", tip: "Coupe semi-ajustée recommandée." },
+					{ title: "Surchemise Utility", description: "Parfaite en superposition et facile à styliser.", brand: "Zara", indicator: "Abordable", price: "35-70€", tip: "Porter ouverte sur t-shirt uni." },
+					{ title: "Manteau Laine Court", description: "Pièce propre pour un look smart urbain.", brand: "COS", indicator: "Indé", price: "150-260€", tip: "Coupe droite pour plus de polyvalence." }
+				],
+				accessories: [
+					{ title: "Montre Minimaliste", description: "Complète la tenue sans surcharge.", brand: "Daniel Wellington", indicator: "Abordable", price: "100-180€", tip: "Bracelet cuir pour look habillé." },
+					{ title: "Ceinture Cuir", description: "Finition propre et structurée.", brand: "Sezane", indicator: "Indé", price: "45-80€", tip: "Assortir à la couleur des chaussures." },
+					{ title: "Lunettes Soleil Acétate", description: "Apporte une ligne plus affirmée au visage.", brand: "Ray-Ban", indicator: "Luxe", price: "120-210€", tip: "Choisir une monture adaptée au visage." },
+					{ title: "Sac Crossbody Urbain", description: "Pratique pour les essentiels quotidiens.", brand: "Herschel", indicator: "Abordable", price: "35-70€", tip: "Format compact pour un look clean." }
+				],
+				shoes: [
+					{ title: "Sneakers Cuir Blanches", description: "Base polyvalente pour looks casual et smart.", brand: "Veja", indicator: "Indé", price: "110-145€", tip: "Nettoyage régulier pour garder l'effet clean." },
+					{ title: "Loafers", description: "Chic sans effort pour tenue semi-habillée.", brand: "Tod's", indicator: "Luxe", price: "220-320€", tip: "Porter avec pantalon cropped." },
+					{ title: "Boots Chelsea", description: "Apporte structure et présence.", brand: "Clarks", indicator: "Indé", price: "130-210€", tip: "Fonctionne bien avec jean brut." },
+					{ title: "Running Lifestyle", description: "Confort élevé pour journées longues.", brand: "New Balance", indicator: "Abordable", price: "90-150€", tip: "Idéal avec chino et surchemise." },
+					{ title: "Derbies Cuir", description: "Option élégante pour looks habillés.", brand: "Bexley", indicator: "Indé", price: "120-190€", tip: "Parfait avec costume ou pantalon laine." },
+					{ title: "Sneakers Retro", description: "Style streetwear facile à associer.", brand: "Nike", indicator: "Abordable", price: "85-140€", tip: "Fonctionne avec jean droit ou cargo." }
+				]
+			}
+		};
+
+		const variantLibrary = {
+			skincare: {
+				focus: ["Hydra", "Calm", "Barrier", "Pure", "Glow", "Balance", "Repair", "Soft", "Fresh", "Daily"],
+				context: ["peaux mixtes", "peaux sensibles", "routine matin", "routine soir", "utilisation quotidienne", "teint irrégulier", "zones sèches", "zones grasses", "climat chaud", "climat froid"],
+				collection: ["Studio", "Signature", "Pro", "Edition", "Select", "Core", "Prime", "Essential", "Plus", "Expert"]
+			},
+			hair: {
+				focus: ["Volume", "Smooth", "Repair", "Scalp", "Gloss", "Control", "Texture", "Lift", "Anti-Frizz", "Refresh"],
+				context: ["cheveux fins", "cheveux épais", "cheveux secs", "cheveux mixtes", "coiffage rapide", "look naturel", "tenue longue", "saison humide", "saison sèche", "utilisation quotidienne"],
+				collection: ["Barber", "Studio", "Urban", "Expert", "Pro", "Prime", "Craft", "Select", "Motion", "Core"]
+			},
+			makeup: {
+				focus: ["Natural", "Soft", "Matte", "Glow", "Light", "Cover", "Fresh", "Daily", "Clean", "Blend"],
+				context: ["fini discret", "effet naturel", "tenue bureau", "sortie soirée", "retouches rapides", "teint uniforme", "regard reposé", "zéro surcharge", "look minimal", "usage quotidien"],
+				collection: ["Studio", "Edition", "Pro", "Urban", "Select", "Prime", "Core", "Plus", "Essential", "Line"]
+			},
+			clothes: {
+				focus: ["Tailored", "Relax", "City", "Weekend", "Smart", "Daily", "Minimal", "Modern", "Classic", "Street"],
+				context: ["tenue bureau", "sortie ville", "week-end", "look casual", "look habillé", "mi-saison", "été", "hiver", "superposition", "style épuré"],
+				collection: ["Capsule", "Studio", "Line", "Series", "Edition", "Select", "Core", "Prime", "Signature", "Urban"]
+			},
+			accessories: {
+				focus: ["Minimal", "Statement", "Clean", "Chic", "Sharp", "Daily", "Premium", "Light", "Classic", "Modern"],
+				context: ["look casual", "look habillé", "usage quotidien", "soirée", "style minimal", "style affirmé", "allure élégante", "allure urbaine", "tenue simple", "tenue forte"],
+				collection: ["Edition", "Studio", "Line", "Select", "Core", "Prime", "Signature", "Craft", "Urban", "Essential"]
+			},
+			shoes: {
+				focus: ["Street", "Classic", "Comfort", "Sharp", "Light", "Urban", "Smart", "Daily", "Premium", "Motion"],
+				context: ["journée active", "sortie ville", "bureau", "week-end", "tenue habillée", "tenue casual", "longue marche", "mi-saison", "été", "hiver"],
+				collection: ["Series", "Studio", "Line", "Pro", "Edition", "Core", "Prime", "Select", "Signature", "Step"]
+			}
+		};
+
+		const merchantSearchTemplates = {
+			amazon: "https://www.amazon.fr/s?k={q}",
+			sephora: "https://www.sephora.fr/search?text={q}",
+			nocibe: "https://www.nocibe.fr/search?text={q}",
+			lookfantastic: "https://www.lookfantastic.fr/search?search={q}",
+			zalando: "https://www.zalando.fr/catalog/?q={q}",
+			asos: "https://www.asos.com/search/?q={q}",
+			sarenza: "https://www.sarenza.com/recherche?text={q}",
+			snipes: "https://www.snipes.fr/search?q={q}"
+		};
+
+		const merchantByCategory = {
+			skincare: ["sephora", "nocibe", "lookfantastic", "amazon"],
+			hair: ["lookfantastic", "sephora", "amazon", "nocibe"],
+			makeup: ["sephora", "nocibe", "lookfantastic", "amazon"],
+			clothes: ["zalando", "asos", "amazon"],
+			accessories: ["zalando", "asos", "amazon"],
+			shoes: ["sarenza", "zalando", "snipes", "amazon"]
+		};
+
+		const merchantLabels = {
+			amazon: "Amazon",
+			sephora: "Sephora",
+			nocibe: "Nocibe",
+			lookfantastic: "Lookfantastic",
+			zalando: "Zalando",
+			asos: "ASOS",
+			sarenza: "Sarenza",
+			snipes: "Snipes"
+		};
+
+		const brandLibraryByGenderCategory = {
+			femme: {
+				skincare: ["Caudalie", "Avène", "Bioderma", "Filorga", "Drunk Elephant", "Paula's Choice", "Typology", "Eucerin"],
+				hair: ["Kerastase", "Briogeo", "Moroccanoil", "OUAI", "Olaplex", "Redken", "Living Proof", "L'Oreal Professionnel", "Bumble and bumble", "amika", "Color Wow", "Verb"],
+				makeup: ["Dior", "YSL Beauty", "Chanel Beauty", "Fenty Beauty", "NARS", "Rare Beauty", "Huda Beauty", "Charlotte Tilbury", "Pat McGrath", "Armani Beauty", "e.l.f.", "Too Faced", "Tarte", "Glossier"],
+				clothes: ["Sezane", "COS", "Maje", "Sandro", "Massimo Dutti", "Mango", "Zara", "Reformation", "A.P.C.", "Balzac Paris"],
+				accessories: ["Polene", "Longchamp", "Swarovski", "Pandora", "Ray-Ban", "Mejuri", "Sezane", "Fossil"],
+				shoes: ["Repetto", "Jonak", "Veja", "Aldo", "Vagabond", "Clarks", "Geox", "Michael Kors"]
+			},
+			homme: {
+				skincare: ["Clinique Men", "Kiehl's", "Biotherm Homme", "Nivea Men", "Bulldog", "Vichy Homme", "The Ordinary", "La Roche-Posay"],
+				hair: ["American Crew", "Reuzel", "Uppercut Deluxe", "Redken", "Kiehl's", "L'Oreal Men Expert", "Schwarzkopf Professional", "Slick Gorilla", "got2b", "STMNT", "Kevin Murphy"],
+				makeup: ["War Paint", "Lab Series", "Chanel", "MAC", "Tom Ford", "NARS", "Anastasia", "Nivea Men", "e.l.f.", "MMUK MAN", "Maybelline", "Bulldog"],
+				clothes: ["Massimo Dutti", "COS", "A.P.C.", "AMI Paris", "Levi's", "Dockers", "Uniqlo", "Carhartt WIP", "Hugo Boss", "Zara"],
+				accessories: ["Ray-Ban", "Daniel Wellington", "Fossil", "Seiko", "Herschel", "Bellroy", "Tommy Hilfiger", "Polo Ralph Lauren"],
+				shoes: ["Clarks", "Tod's", "New Balance", "Nike", "Adidas", "Veja", "Timberland", "Bexley"]
+			},
+			unisex: {
+				skincare: ["CeraVe", "The Ordinary", "La Roche-Posay", "Bioderma", "Avène"],
+				hair: ["GHD", "Klorane", "Davines", "L'Oréal Professionnel", "K18"],
+				makeup: ["MAC", "Laura Mercier", "Fenty Beauty", "NARS", "Burt's Bees"],
+				clothes: ["Uniqlo", "COS", "Carhartt WIP", "Arket", "Weekday"],
+				accessories: ["Ray-Ban", "Casio", "Herschel", "Eastpak", "Fjällräven"],
+				shoes: ["New Balance", "Veja", "Converse", "Nike", "Adidas"]
+			}
+		};
+
+		const styleByCategory = {
+			clothes: ["old money", "streetwear", "y2k", "minimaliste", "casual chic", "sportwear", "techwear", "preppy", "grunge", "skater", "quiet luxury", "classique elegant", "business casual", "boho moderne", "goth soft", "k-fashion", "parisian chic", "workwear", "coquette", "smart urbain"],
+			shoes: ["streetwear", "y2k", "minimaliste", "casual chic", "sportwear", "techwear", "preppy", "grunge", "skater", "quiet luxury", "classique elegant", "business casual", "boho moderne", "k-fashion", "parisian chic", "workwear", "smart urbain"],
+			accessories: ["minimaliste", "old money", "streetwear", "quiet luxury", "parisian chic", "coquette", "business casual"],
+			makeup: ["minimaliste", "casual chic", "coquette", "goth soft", "y2k", "quiet luxury"],
+			skincare: ["minimaliste"],
+			hair: ["casual chic", "streetwear", "minimaliste", "k-fashion"]
+		};
+
+		function randomCount(min, max) {
+			return Math.floor(Math.random() * (max - min + 1)) + min;
+		}
+
+		function stringHash(input) {
+			let hash = 0;
+			for(let i = 0; i < input.length; i++) {
+				hash = ((hash << 5) - hash) + input.charCodeAt(i);
+				hash |= 0;
+			}
+			return Math.abs(hash);
+		}
+
+		function pickAgeProfile(category, index) {
+			const profiles = ageStyleProfiles[category] || ageStyleProfiles.skincare;
+			return profiles[index % profiles.length];
+		}
+
+		function pickBrand(category, gender, index, fallbackBrand) {
+			const genderPool = (brandLibraryByGenderCategory[gender] || {})[category] || [];
+			const unisexPool = (brandLibraryByGenderCategory.unisex || {})[category] || [];
+			const pool = [...genderPool, ...unisexPool];
+			if(pool.length === 0) return fallbackBrand;
+			return pool[index % pool.length];
+		}
+
+		function buildShoppingUrl({ title, brand, category, gender, ageGroup, styleProfile }) {
+			const merchants = merchantByCategory[category] || ["amazon"];
+			const query = `${brand} ${title} ${gender} ${ageGroup || ""} ${styleProfile || ""} ${category}`;
+			const merchantKey = merchants[stringHash(query) % merchants.length];
+			const template = merchantSearchTemplates[merchantKey] || merchantSearchTemplates.amazon;
+			return {
+				merchant: merchantLabels[merchantKey] || "Shop",
+				url: template.replace("{q}", encodeURIComponent(query))
+			};
+		}
+
+		function getCategoryStockTarget(gender, category) {
+			const extra = (ADDITIONAL_STOCK_BY_GENDER_CATEGORY[gender] || {})[category] || 0;
+			const secondPass = (ADDITIONAL_STOCK_SECOND_PASS[gender] || {})[category] || 0;
+			const hairBoost = category === "hair" ? (HAIR_TREND_STOCK_BOOST[gender] || 0) : 0;
+			const makeupBoost = category === "makeup" ? (MAKEUP_TREND_STOCK_BOOST[gender] || 0) : 0;
+			return BASE_STOCK_TARGET_PER_CATEGORY + extra + secondPass + hairBoost + makeupBoost;
+		}
+
+		function getBudgetTagFromIndicator(indicator) {
+			if(indicator === "Luxe") return "premium";
+			if(indicator === "Abordable") return "abordable";
+			return "mix";
+		}
+
+		function getBasePriority(indicator) {
+			if(indicator === "Luxe") return 6;
+			if(indicator === "Abordable") return 7;
+			return 8;
+		}
+
+		function getDefaultAgeTargets(ageGroup) {
+			// Keep age targeting strict by default to avoid cross-age recommendations.
+			return [ageGroup || "adulte"];
+		}
+
+		function enrichProduct(item, { category, gender, index = 0 }) {
+			const ageProfile = pickAgeProfile(category, index);
+			const chosenBrand = pickBrand(category, item.isUnisex ? "unisex" : gender, index, item.brand || "");
+			const generatedStyles = styleByCategory[category] || ["minimaliste"];
+			const styleSet = item.styles && item.styles.length > 0 ? item.styles : [generatedStyles[index % generatedStyles.length]];
+			const safeAgeGroup = item.ageGroup || ageProfile.ageGroup;
+			const fallback = buildShoppingUrl({
+				title: item.title,
+				brand: chosenBrand,
+				category,
+				gender: item.isUnisex ? "unisex" : gender,
+				ageGroup: safeAgeGroup,
+				styleProfile: item.styleProfile || ageProfile.styleProfile
+			});
+			return {
+				...item,
+				brand: chosenBrand,
+				ageGroup: safeAgeGroup,
+				styleProfile: item.styleProfile || ageProfile.styleProfile,
+				targetContext: item.targetContext || ageProfile.context,
+				genderTarget: item.genderTarget || (item.isUnisex ? "unisex" : gender),
+				ageTargets: item.ageTargets || getDefaultAgeTargets(safeAgeGroup),
+				styles: styleSet,
+				budgetTag: item.budgetTag || getBudgetTagFromIndicator(item.indicator),
+				skinFit: item.skinFit || ["sensibilite", "acne", "secheresse", "brillance", "rougeurs", "uniformite"],
+				priorityScore: typeof item.priorityScore === "number" ? item.priorityScore : getBasePriority(item.indicator),
+				merchant: item.merchant || fallback.merchant,
+				url: item.url || fallback.url,
+				linkLabel: item.linkLabel || "Voir le produit"
+			};
+		}
+
+		function shuffleArray(items) {
+			const copy = [...items];
+			for(let i = copy.length - 1; i > 0; i--) {
+				const j = Math.floor(Math.random() * (i + 1));
+				[copy[i], copy[j]] = [copy[j], copy[i]];
+			}
+			return copy;
+		}
+
+		function buildCategoryStock(baseItems, category, gender, target) {
+			if(!Array.isArray(baseItems) || baseItems.length === 0) return [];
+
+			const lib = variantLibrary[category] || variantLibrary.skincare;
+			const mergedBase = [...baseItems, ...(unisexProductsByCategory[category] || [])];
+			const generated = mergedBase.map((item, idx) => enrichProduct(item, { category, gender, index: idx }));
+			let index = 0;
+
+			while(generated.length < target && index < 1200) {
+				const base = mergedBase[index % mergedBase.length];
+				const focus = lib.focus[index % lib.focus.length];
+				const context = lib.context[(index * 3) % lib.context.length];
+				const collection = lib.collection[(index * 5) % lib.collection.length];
+				const ageProfile = pickAgeProfile(category, index);
+				const useUnisex = (index % 7 === 0);
+				const syntheticGender = useUnisex ? "unisex" : gender;
+				const brand = pickBrand(category, syntheticGender, index, base.brand || "Brand");
+				const synthetic = {
+					title: `${base.title} ${focus} ${generated.length + 1}`,
+					description: `${base.description} Recommandé pour ${context}, profil ${ageProfile.ageGroup}.`,
+					brand: `${brand} ${collection}`,
+					indicator: base.indicator,
+					price: base.price,
+					tip: `${base.tip} Prioriser une application régulière pour de meilleurs résultats.`,
+					ageGroup: ageProfile.ageGroup,
+					styleProfile: ageProfile.styleProfile,
+					targetContext: ageProfile.context,
+					isUnisex: useUnisex
+				};
+				generated.push(enrichProduct(synthetic, { category, gender, index: generated.length + index }));
+				index += 1;
+			}
+
+			return generated.slice(0, target);
+		}
+
+		function buildGenderCatalog(seedCatalog, gender) {
+			const result = {};
+			Object.keys(seedCatalog).forEach((category) => {
+				const target = getCategoryStockTarget(gender, category);
+				result[category] = buildCategoryStock(seedCatalog[category], category, gender, target);
+			});
+			return result;
+		}
+
+		const productsByGender = {
+			femme: buildGenderCatalog(seedProductsByGender.femme, "femme"),
+			homme: buildGenderCatalog(seedProductsByGender.homme, "homme")
+		};
+
+		function getImageSeed(photo) {
+			if(!photo) return Date.now().toString();
+			return photo.slice(0, 260);
+		}
+
+		function getImageScore(item, category, imageSeed) {
+			const hash = stringHash(`${imageSeed}:${category}:${item.title}:${item.brand}`);
+			return 20 + (hash % 41);
+		}
+
+		function profileWeightScore(item, category, profile) {
+			let score = 0;
+			const ageMatch = profile.ageRange && Array.isArray(item.ageTargets) && item.ageTargets.includes(profile.ageRange);
+			const styleMatch = profile.targetStyle && Array.isArray(item.styles) && item.styles.includes(profile.targetStyle);
+			const skinMatch = profile.skinConcern && Array.isArray(item.skinFit) && item.skinFit.includes(profile.skinConcern);
+			const budgetMatch = profile.budgetLevel && item.budgetTag === profile.budgetLevel;
+
+			// Category-specific priority order:
+			// - clothes: age first, then style
+			// - makeup: age first, then skin concern
+			// - others: age first, then relevant profile traits
+			if(category === "clothes") {
+				if(ageMatch) score += 20;
+				if(styleMatch) score += 14;
+				if(budgetMatch) score += 6;
+				return score;
+			}
+			if(category === "makeup") {
+				if(ageMatch) score += 20;
+				if(skinMatch) score += 14;
+				if(styleMatch) score += 10;
+				if(budgetMatch) score += 4;
+				const isTeenTrend = /blush|lip oil|camo|setting powder|skin tint|halo glow/i.test((item.title || "").toLowerCase());
+				if(profile.ageRange === "ado" && isTeenTrend) score += 8;
+				if(profile.skinConcern === "acne" && /matte|blur|niacinamide|pore|blemish/i.test((item.title || "").toLowerCase())) score += 5;
+				return score;
+			}
+			if(category === "skincare") {
+				if(ageMatch) score += 20;
+				if(skinMatch) score += 14;
+				if(budgetMatch) score += 6;
+				return score;
+			}
+			if(category === "shoes" || category === "accessories") {
+				if(ageMatch) score += 18;
+				if(styleMatch) score += 12;
+				if(budgetMatch) score += 6;
+				return score;
+			}
+			if(category === "hair") {
+				if(ageMatch) score += 20;
+				if(styleMatch) score += 10;
+				if(budgetMatch) score += 5;
+				const isTexturePowder = /poudre|powder/i.test(item.title || "");
+				if(profile.ageRange === "ado" && isTexturePowder) score += 10;
+				return score;
+			}
+			if(ageMatch) score += 18;
+			if(styleMatch) score += 10;
+			if(skinMatch) score += 8;
+			if(budgetMatch) score += 4;
+			return score;
+		}
+
+		function isMinorRestricted(item, category, profile) {
+			if(profile.ageRange !== "enfant" && profile.ageRange !== "ado") return false;
+			if(category === "makeup" && item.indicator === "Luxe") return true;
+			if((category === "accessories" || category === "shoes") && item.indicator === "Luxe") return true;
+			return false;
+		}
+
+		function budgetFilterPass(item, profile) {
+			if(!profile.budgetLevel || profile.budgetLevel === "mix") return true;
+			if(profile.budgetLevel === "abordable") return item.budgetTag !== "premium";
+			if(profile.budgetLevel === "premium") return item.budgetTag !== "abordable";
+			return true;
+		}
+
+		function pickProfileAwareProducts(category, minCount, maxCount, gender, profile, imageSeed) {
+			const safeGender = productsByGender[gender] ? gender : "femme";
+			const baseItems = productsByGender[safeGender][category] || [];
+			if(baseItems.length === 0) return [];
+
+			const exactGenderItems = baseItems.filter((item) => item.genderTarget === safeGender);
+			const unisexItems = baseItems.filter((item) => item.genderTarget === "unisex");
+			const hasExactGenderPool = exactGenderItems.length > 0;
+
+			const ageSafeExact = profile.ageRange
+				? exactGenderItems.filter((item) => !Array.isArray(item.ageTargets) || item.ageTargets.includes(profile.ageRange))
+				: exactGenderItems;
+			const ageSafeUnisex = profile.ageRange
+				? unisexItems.filter((item) => !Array.isArray(item.ageTargets) || item.ageTargets.includes(profile.ageRange))
+				: unisexItems;
+
+			// Absolute priority: exact gender first, unisex only as backup when pool is too small.
+			let workingPool = [...ageSafeExact];
+			if(workingPool.length < 12) {
+				workingPool = [...workingPool, ...ageSafeUnisex];
+			}
+
+			let filtered = workingPool
+				.filter((item) => !isMinorRestricted(item, category, profile))
+				.filter((item) => budgetFilterPass(item, profile));
+
+			// Never reintroduce off-age items in fallback; relax budget first, then minor policy.
+			if(filtered.length < 12) {
+				filtered = workingPool.filter((item) => !isMinorRestricted(item, category, profile));
+			}
+			if(filtered.length < 12) {
+				filtered = workingPool;
+			}
+			if(filtered.length === 0) {
+				filtered = hasExactGenderPool ? exactGenderItems : [...exactGenderItems, ...unisexItems];
+			}
+
+			const scored = filtered.map((item) => {
+				const imageScore = getImageScore(item, category, imageSeed);
+				const profileScore = profileWeightScore(item, category, profile);
+				const jitter = (stringHash(`${item.title}:${Date.now()}:${category}`) % 3);
+				const genderPriority = item.genderTarget === safeGender ? 25 : -8;
+				const finalScore = imageScore + profileScore + jitter + (item.priorityScore || 0) + genderPriority;
+				return { ...item, imageScore, profileScore, finalScore };
+			}).sort((a, b) => b.finalScore - a.finalScore);
+
+			const count = Math.min(randomCount(minCount, maxCount), scored.length);
+			const unisexMax = Math.max(1, Math.floor(count * 0.25));
+			const picked = [];
+			let unisexCount = 0;
+			for(let i = 0; i < scored.length && picked.length < count; i++) {
+				const item = scored[i];
+				if(item.genderTarget === "unisex" && unisexCount >= unisexMax) continue;
+				picked.push(item);
+				if(item.genderTarget === "unisex") unisexCount += 1;
+			}
+
+			const key = `${safeGender}:${category}`;
+			const signature = picked.map(item => item.title).sort().join("|");
+			if(signature === lastRecommendationSignature[key]) {
+				const reshuffled = shuffleArray(scored);
+				const fallbackPick = [];
+				let fallbackUnisexCount = 0;
+				for(let i = 0; i < reshuffled.length && fallbackPick.length < count; i++) {
+					const item = reshuffled[i];
+					if(item.genderTarget === "unisex" && fallbackUnisexCount >= unisexMax) continue;
+					fallbackPick.push(item);
+					if(item.genderTarget === "unisex") fallbackUnisexCount += 1;
+				}
+				return fallbackPick;
+			}
+			lastRecommendationSignature[key] = signature;
+			return picked;
+		}
+
+		// Fonction pour générer des résultats homogénéisés
+		function generateRandomRecommendations(gender, profile, imageSeed) {
+			return {
+				skincare: pickProfileAwareProducts("skincare", 5, 8, gender, profile, imageSeed),
+				hair: pickProfileAwareProducts("hair", 5, 8, gender, profile, imageSeed),
+				makeup: pickProfileAwareProducts("makeup", 5, 8, gender, profile, imageSeed),
+				clothes: pickProfileAwareProducts("clothes", 5, 8, gender, profile, imageSeed),
+				accessories: pickProfileAwareProducts("accessories", 5, 8, gender, profile, imageSeed),
+				shoes: pickProfileAwareProducts("shoes", 5, 8, gender, profile, imageSeed)
+			};
+		}
+
+		function goPage(page) {
+			const activePage = document.querySelector('.page.active');
+			if(activePage && activePage.id === 'upload-page' && page !== 'upload') {
+				stopCameraStream();
+			}
+			document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+			document.getElementById(page + '-page').classList.add('active');
+		}
+
+		function startApp(gender) {
+			currentGender = gender;
+			if(profileNameInput) {
+				profileNameInput.placeholder = gender === "homme" ? "Ex: Lucas" : "Ex: Emma";
+			}
+			goPage('profile');
+		}
+
+		function showTab(event, tab) {
+			if(event) event.preventDefault();
+			document.querySelectorAll('.tab-content').forEach(t => {
+				t.classList.remove('active');
+				t.style.display = 'none';
+			});
+			document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+			const content = document.getElementById(tab + '-content');
+			if(content) {
+				content.classList.add('active');
+				content.style.display = 'block';
+			}
+			const button = event?.currentTarget || document.querySelector(`.tab-btn[data-tab="${tab}"]`);
+			if(button) {
+				button.classList.add('active');
+			}
+		}
+
+		// Camera/Upload handling
+		const profileNameInput = document.getElementById("profileName");
+		const profileAgeRangeInput = document.getElementById("profileAgeRange");
+		const profileSkinToneInput = document.getElementById("profileSkinTone");
+		const profileSkinConcernInput = document.getElementById("profileSkinConcern");
+		const profileBudgetLevelInput = document.getElementById("profileBudgetLevel");
+		const profileTargetStyleInput = document.getElementById("profileTargetStyle");
+		const continueToUploadBtn = document.getElementById("continueToUploadBtn");
+
+		const video = document.getElementById('video');
+		const preview = document.getElementById('preview');
+		const canvas = document.getElementById('canvas');
+		const startCameraBtn = document.getElementById('startCamera');
+		const uploadBtn = document.getElementById('uploadBtn');
+		const uploadInput = document.getElementById('upload');
+		const analyzeBtn = document.getElementById('analyzeBtn');
+		const photoPlaceholder = document.getElementById('photoPlaceholder');
+
+		let stream = null;
+
+		function normalizeInput(value) {
+			return (value || "").toString().trim().toLowerCase();
+		}
+
+		function updateProfileState() {
+			userProfile.name = (profileNameInput?.value || "").trim();
+			userProfile.ageRange = normalizeInput(profileAgeRangeInput?.value);
+			userProfile.skinTone = normalizeInput(profileSkinToneInput?.value);
+			userProfile.skinConcern = normalizeInput(profileSkinConcernInput?.value);
+			userProfile.budgetLevel = normalizeInput(profileBudgetLevelInput?.value);
+			userProfile.targetStyle = normalizeInput(profileTargetStyleInput?.value);
+		}
+
+		function validateProfileForm() {
+			updateProfileState();
+			const isValid = !!(
+				userProfile.ageRange &&
+				userProfile.skinTone &&
+				userProfile.skinConcern &&
+				userProfile.budgetLevel &&
+				userProfile.targetStyle
+			);
+			if(continueToUploadBtn) {
+				continueToUploadBtn.disabled = !isValid;
+				continueToUploadBtn.style.opacity = isValid ? "1" : "0.5";
+			}
+			return isValid;
+		}
+
+		[profileNameInput, profileAgeRangeInput, profileSkinToneInput, profileSkinConcernInput, profileBudgetLevelInput, profileTargetStyleInput]
+			.filter(Boolean)
+			.forEach((node) => {
+				node.addEventListener("input", validateProfileForm);
+				node.addEventListener("change", validateProfileForm);
+			});
+
+		if(continueToUploadBtn) {
+			continueToUploadBtn.addEventListener("click", () => {
+				if(validateProfileForm()) {
+					goPage("upload");
+				}
+			});
+		}
+		validateProfileForm();
+
+		function stopCameraStream() {
+			if(stream) {
+				stream.getTracks().forEach(t => t.stop());
+				stream = null;
+			}
+			if(video) {
+				video.srcObject = null;
+				video.style.display = 'none';
+			}
+		}
+
+		startCameraBtn.addEventListener('click', async () => {
+			try {
+				stream = await navigator.mediaDevices.getUserMedia({ video: { facingMode: 'user' } });
+				video.srcObject = stream;
+				video.style.display = 'block';
+				preview.style.display = 'none';
+				photoPlaceholder.style.display = 'none';
+				analyzeBtn.style.display = 'block';
+			} catch(e) {
+				alert('Accès caméra refusé: ' + e.message);
+			}
+		});
+
+		// Capture photo from camera on click
+		video.addEventListener('click', capturePhoto);
+
+		function capturePhoto() {
+			if(!stream) return;
+			canvas.width = video.videoWidth;
+			canvas.height = video.videoHeight;
+			const ctx = canvas.getContext('2d');
+			ctx.drawImage(video, 0, 0);
+			currentPhoto = canvas.toDataURL('image/jpeg');
+			preview.src = currentPhoto;
+			preview.style.display = 'block';
+			video.style.display = 'none';
+			photoPlaceholder.style.display = 'none';
+			stopCameraStream();
+		}
+
+		uploadBtn.addEventListener('click', () => uploadInput.click());
+		uploadInput.addEventListener('change', (e) => {
+			const file = e.target.files[0];
+			if(!file) return;
+			stopCameraStream();
+			const reader = new FileReader();
+			reader.onload = (event) => {
+				currentPhoto = event.target.result;
+				preview.src = currentPhoto;
+				preview.style.display = 'block';
+				video.style.display = 'none';
+				photoPlaceholder.style.display = 'none';
+				analyzeBtn.style.display = 'block';
+			};
+			reader.readAsDataURL(file);
+		});
+
+		analyzeBtn.addEventListener('click', analyzeWithOpenAI);
+
+		async function analyzeWithOpenAI() {
+			if(!currentPhoto) {
+				alert('Ajoute une photo d\'abord');
+				return;
+			}
+			if(!validateProfileForm()) {
+				alert("Complete ton profil d'abord");
+				goPage("profile");
+				return;
+			}
+
+			goPage('loading');
+			const loadingMessage = document.getElementById("loadingMessage");
+			if(loadingMessage) {
+				loadingMessage.textContent = "L'IA analyse ta photo + ton profil...";
+			}
+			const startTime = Date.now();
+
+			try {
+				// Step 1: Appeler le webhook N8N pour obtenir le résumé IA
+				let summaryText = "Analyse complète de ta palette personnalisée...";
+				
+				try {
+					const webhookResponse = await fetch('https://thevictorius.app.n8n.cloud/webhook/5e183d9c-432f-4bcc-ab4d-15180506e624', {
+						method: 'POST',
+						headers: { 'Content-Type': 'application/json' },
+						body: JSON.stringify({
+							photo: currentPhoto,
+							gender: currentGender,
+							profile: userProfile
+						})
+					});
+					
+					if(webhookResponse.ok) {
+						const webhookData = await webhookResponse.json();
+						if(webhookData.summary) {
+							summaryText = webhookData.summary;
+						}
+					}
+				} catch(webhookError) {
+					console.error('Webhook error:', webhookError);
+					// Continue avec le résumé par défaut
+				}
+
+				// Step 2: Générer les produits recommandés aléatoires
+				const imageSeed = getImageSeed(currentPhoto);
+				const recommendations = generateRandomRecommendations(currentGender, userProfile, imageSeed);
+				const profileLead = userProfile.name ? `${userProfile.name}, ` : "";
+				recommendations.summary = `${profileLead}${summaryText} L'IA combine ta photo (60%) et ton profil (40%).`;
+
+				// Step 3: Attendre minimum 1.5s avant d'afficher les résultats
+				const elapsedTime = Date.now() - startTime;
+				const remainingTime = Math.max(0, 1500 - elapsedTime);
+				await new Promise(resolve => setTimeout(resolve, remainingTime));
+				
+				goPage('results');
+				displayRecommendations(recommendations);
+
+			} catch(error) {
+				console.error(error);
+				goPage('results');
+				document.getElementById('skincare-content').innerHTML = `<div style="padding:20px;color:red;text-align:center"><p>Erreur: ${error.message}</p><p style="font-size:0.8rem;margin-top:10px;color:#8b6aa9">Vérifiez votre connexion et réessayez</p></div>`;
+			}
+		}
+
+		// Icons for each category
+		const categoryIcons = {
+			skincare: '💆',
+			hair: '💇',
+			clothes: '👕',
+			accessories: '✨'
+		};
+
+		function displayRecommendations(recs) {
+			// Display summary at top
+			const summary = recs.summary || "Analyse complète de ton style en cours...";
+			document.getElementById('summaryCard').textContent = summary;
+
+			// Helper function to create product cards
+			function createProductCard(item) {
+				return `
+					<div style="background:linear-gradient(135deg, rgba(255,255,255,0.08), rgba(249,243,255,0.04));border:1px solid rgba(124,58,237,0.15);border-radius:14px;padding:16px;margin-bottom:14px;backdrop-filter:blur(8px)">
+						<div style="display:flex;gap:8px;margin-bottom:10px;flex-wrap:wrap">
+							${item.brand ? `<span style="background:#fff;color:#2d1b69;padding:4px 10px;border-radius:6px;font-size:0.75rem;font-weight:700">${item.brand}</span>` : ''}
+							${item.indicator ? `<span style="background:rgba(249,171,31,0.15);color:#f7ab1f;padding:4px 10px;border-radius:6px;font-size:0.75rem;font-weight:600;display:flex;align-items:center;gap:4px">⭐${item.indicator}</span>` : ''}
+							${item.merchant ? `<span style="background:rgba(124,58,237,0.14);color:#5d3396;padding:4px 10px;border-radius:6px;font-size:0.72rem;font-weight:600">🛍 ${item.merchant}</span>` : ''}
+							${item.ageGroup ? `<span style="background:rgba(16,185,129,0.12);color:#0f766e;padding:4px 10px;border-radius:6px;font-size:0.72rem;font-weight:600">Age: ${item.ageGroup}</span>` : ''}
+							${item.styleProfile ? `<span style="background:rgba(59,130,246,0.12);color:#1d4ed8;padding:4px 10px;border-radius:6px;font-size:0.72rem;font-weight:600">Style: ${item.styleProfile}</span>` : ''}
+							${item.isUnisex ? `<span style="background:rgba(148,163,184,0.2);color:#334155;padding:4px 10px;border-radius:6px;font-size:0.72rem;font-weight:600">Unisex</span>` : ''}
+						</div>
+						<h3 style="margin:0 0 8px 0;color:#2d1b69;font-size:0.95rem;font-weight:700">${item.title}</h3>
+						<p style="margin:0 0 12px 0;color:#8b6aa9;font-size:0.85rem;line-height:1.6">${item.description}</p>
+						${item.targetContext ? `<p style="margin:0 0 10px 0;color:#7c3aed;font-size:0.78rem;line-height:1.4;font-weight:600">🎯 Cible: ${item.targetContext}</p>` : ''}
+						${item.price ? `<div style="color:#f7ab1f;font-size:0.9rem;font-weight:700;margin-bottom:10px">💰 ${item.price}</div>` : ''}
+						${item.tip ? `<div style="background:rgba(236,72,153,0.12);border-left:3px solid #ec4899;padding:10px;border-radius:6px;color:#ec4899;font-size:0.8rem;line-height:1.5"><span style="font-weight:700">💡 Astuce :</span> ${item.tip}</div>` : ''}
+						${item.url ? `<a href="${item.url}" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;justify-content:center;margin-top:12px;padding:9px 12px;background:linear-gradient(135deg, #7c3aed, #ec4899);color:#fff;border-radius:8px;font-size:0.8rem;font-weight:700;text-decoration:none;box-shadow:0 4px 12px rgba(236,72,153,0.2)">${item.linkLabel || 'Voir le produit'}</a>` : ''}
+					</div>
+				`;
+			}
+
+			// Display skincare
+			document.getElementById('skincare-content').innerHTML = (recs.skincare || []).length > 0
+				? (recs.skincare || []).map(createProductCard).join('')
+				: '<div style="color:#8b6aa9;padding:20px;text-align:center;font-size:0.9rem">Aucune recommandation pour cette catégorie</div>';
+
+			// Display hair
+			document.getElementById('hair-content').innerHTML = (recs.hair || []).length > 0
+				? (recs.hair || []).map(createProductCard).join('')
+				: '<div style="color:#8b6aa9;padding:20px;text-align:center;font-size:0.9rem">Aucune recommandation pour cette catégorie</div>';
+
+			// Display makeup
+			document.getElementById('makeup-content').innerHTML = (recs.makeup || []).length > 0
+				? (recs.makeup || []).map(createProductCard).join('')
+				: '<div style="color:#8b6aa9;padding:20px;text-align:center;font-size:0.9rem">Aucune recommandation pour cette catégorie</div>';
+
+			// Display clothes
+			document.getElementById('clothes-content').innerHTML = (recs.clothes || []).length > 0
+				? (recs.clothes || []).map(createProductCard).join('')
+				: '<div style="color:#8b6aa9;padding:20px;text-align:center;font-size:0.9rem">Aucune recommandation pour cette catégorie</div>';
+
+			// Display accessories
+			document.getElementById('accessories-content').innerHTML = (recs.accessories || []).length > 0
+				? (recs.accessories || []).map(createProductCard).join('')
+				: '<div style="color:#8b6aa9;padding:20px;text-align:center;font-size:0.9rem">Aucune recommandation pour cette catégorie</div>';
+		// Display shoes
+		document.getElementById('shoes-content').innerHTML = (recs.shoes || []).length > 0
+			? (recs.shoes || []).map(createProductCard).join('')
+			: '<div style="color:#8b6aa9;padding:20px;text-align:center;font-size:0.9rem">Aucune recommandation pour cette catégorie</div>';
+			// Auto-show first tab with content
+			showTab(null, 'skincare');
+		}
+	</script>
+</body>
+</html>
